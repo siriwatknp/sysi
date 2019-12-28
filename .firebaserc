@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "sysi-org"
+  },
+  "targets": {
+    "sysi-org": {
+      "hosting": {
+        "staging": [
+          "staging-sysi-org"
+        ],
+        "production": [
+          "sysi-org"
+        ]
+      }
+    }
+  }
+}
