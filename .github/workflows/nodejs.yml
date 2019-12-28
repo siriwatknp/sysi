@@ -1,0 +1,13 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: GitHub Action for Firebase
+      uses: w9jds/firebase-action@v1.1.0
+
