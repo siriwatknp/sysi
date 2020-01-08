@@ -50,22 +50,27 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
   },
 }));
 
-const SupportInfo = ({ title, content }) => {
+const SupportInfo = ({ title, content, icon }) => {
   const styles = useStyles();
   return (
     <div className={styles.root}>
-      <div className={styles.iconContainer} />
+      <div className={styles.iconContainer}>{icon}</div>
       <Box px={2} pt={3} maxWidth={320} mx={'auto'}>
-        <h3 className={styles.title}>{title}</h3>
-        <p>{content}</p>
+        <Box color={'grey.700'}>
+          <h3 className={styles.title}>{title}</h3>
+        </Box>
+        <Box color={'grey.600'}>
+          <p>{content}</p>
+        </Box>
       </Box>
     </div>
   );
 };
 
 SupportInfo.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
+  title: PropTypes.node.isRequired,
+  content: PropTypes.node.isRequired,
+  icon: PropTypes.node.isRequired,
 };
 SupportInfo.defaultProps = {};
 
