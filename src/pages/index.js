@@ -119,7 +119,7 @@ const IndexPage = () => {
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
               <SupportInfo
-                icon={<FontAwesomeIcon icon="hand-usd" />}
+                icon={<FontAwesomeIcon icon={['fad', 'hand-usd']} />}
                 title={'เงินทุน • FUNDING'}
                 content={
                   <>
@@ -131,7 +131,7 @@ const IndexPage = () => {
             </Grid>
             <Grid item xs={12} sm={6}>
               <SupportInfo
-                icon={<FontAwesomeIcon icon="book-spells" />}
+                icon={<FontAwesomeIcon icon={['fad', 'book-spells']} />}
                 title={'ทักษะ • TRAINING'}
                 content={
                   'พัฒนาความรู้และทักษะที่จําเป็นต่อการพัฒนาตนเอง พัฒนาทีมและพัฒนาโครงการ ไม่ว่าจะเป็นวิธีคิด เครื่องมือ'
@@ -140,7 +140,7 @@ const IndexPage = () => {
             </Grid>
             <Grid item xs={12} sm={6}>
               <SupportInfo
-                icon={<FontAwesomeIcon icon="monitor-heart-rate" />}
+                icon={<FontAwesomeIcon icon={['fad', 'monitor-heart-rate']} />}
                 title={'ติดตาม • MONITORING'}
                 content={
                   'ลงพื้นที่ติดตามและให้คําปรึกษาแต่ละโครงการ สนับสนุนการเติบโตทั้งระดับบุคคล ระดับทีม และการสร้างผลกระทบของโครงการ'
@@ -149,7 +149,7 @@ const IndexPage = () => {
             </Grid>
             <Grid item xs={12} sm={6}>
               <SupportInfo
-                icon={<FontAwesomeIcon icon="chart-network" />}
+                icon={<FontAwesomeIcon icon={['fad', 'chart-network']} />}
                 title={'เครือข่าย • NETWORK'}
                 content={
                   'เส้นทางการสร้างการเปลี่ยนแปลงทางสังคม จะไปได้ยาว ถ้าไปด้วยกัน ที่นี่สนับสนุนการเรียนรู้ร่วมกันอย่างเข้มข้นระหว่างเพื่อนร่วมรุ่น'
