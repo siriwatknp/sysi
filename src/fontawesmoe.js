@@ -7,14 +7,14 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 // import {
-//   faHandUsd,
+//   faHandsUsd,
 //   faBookSpells,
 //   faMonitorHeartRate,
 //   faChartNetwork,
 // } from '@fortawesome/pro-duotone-svg-icons';
 
 library.add(
-  // faHandUsd,
+  // faHandsUsd,
   // faBookSpells,
   // faMonitorHeartRate,
   // faChartNetwork,
