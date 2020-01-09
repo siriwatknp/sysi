@@ -32,16 +32,20 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
     justifyContent: 'center',
     margin: '-52px auto 0',
     flexShrink: 0,
+    color: palette.primary.main,
+    fontSize: 48,
     [breakpoints.up('md')]: {
       margin: 0,
       width: 144,
       height: 144,
       boxShadow: 'none',
       marginRight: 16,
+      fontSize: 60,
     },
     [breakpoints.up('lg')]: {
       width: 184,
       height: 184,
+      fontSize: 72,
     },
   },
   title: {
