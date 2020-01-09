@@ -119,7 +119,7 @@ const IndexPage = () => {
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
               <SupportInfo
-                icon={<FontAwesomeIcon icon={['fad', 'hand-usd']} />}
+                icon={<FontAwesomeIcon icon={['fad', 'hands-usd']} />}
                 title={'เงินทุน • FUNDING'}
                 content={
                   <>
