@@ -6,18 +6,18 @@ import {
   faMedium,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-// import {
-//   faHandsUsd,
-//   faBookSpells,
-//   faMonitorHeartRate,
-//   faChartNetwork,
-// } from '@fortawesome/pro-duotone-svg-icons';
+import {
+  faHandsUsd,
+  faBookSpells,
+  faMonitorHeartRate,
+  faChartNetwork,
+} from '@fortawesome/pro-duotone-svg-icons';
 
 library.add(
-  // faHandsUsd,
-  // faBookSpells,
-  // faMonitorHeartRate,
-  // faChartNetwork,
+  faHandsUsd,
+  faBookSpells,
+  faMonitorHeartRate,
+  faChartNetwork,
   faEnvelope,
   faFacebook,
   faTwitter,
