@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
+      - run: echo "@fortawesome:registry=https://npm.fontawesome.com/" > ~/repo/.npmrc
+      - run: echo "//npm.fontawesome.com/:_authToken=${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}" >> ~/repo/.npmrc
+      - run: cat ~/repo/.npmrc
       - name: Install Dependencies
         run: yarn
       - name: Build
