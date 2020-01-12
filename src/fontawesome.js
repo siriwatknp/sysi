@@ -24,7 +24,7 @@ library.add(
   // faMonitorHeartRate,
   // faChartNetwork,
   // faClipboardListCheck,
-  // faCalendarAlt
+  // faCalendarAlt,
   // faBooks,
   // faInfoCircle,
   faEnvelope,
