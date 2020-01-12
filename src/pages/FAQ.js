@@ -13,6 +13,7 @@ import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp';
 const useStyles = makeStyles(({ palette }) => ({
   item: {
     padding: '20px 16px',
+    paddingRight: 56,
     marginBottom: 8,
     borderRadius: 8,
     flexDirection: 'column',
