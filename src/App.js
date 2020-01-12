@@ -98,7 +98,7 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
   social: {
     fontSize: 40,
     '&:not(:first-of-type)': {
-      marginLeft: 24,
+      marginLeft: 16,
     },
   },
   categoryHeading: {
@@ -339,13 +339,40 @@ const App = ({ children }) => {
                         ml={{ sm: -2, md: 0 }}
                         className={styles.socialWrapper}
                       >
-                        <IconButton className={styles.social}>
+                        <IconButton
+                          className={styles.social}
+                          component={'a'}
+                          href={'https://www.facebook.com/sysi.thailand'}
+                          rel={'noopener'}
+                          target={'_blank'}
+                        >
                           <FontAwesomeIcon icon={['fab', 'facebook']} />
                         </IconButton>
-                        <IconButton className={styles.social}>
+                        <IconButton
+                          className={styles.social}
+                          component={'a'}
+                          href={'https://www.instagram.com/sysi.thailand'}
+                          rel={'noopener'}
+                          target={'_blank'}
+                        >
+                          <FontAwesomeIcon icon={['fab', 'instagram']} />
+                        </IconButton>
+                        <IconButton
+                          className={styles.social}
+                          component={'a'}
+                          href={'https://twitter.com/sysithailand'}
+                          rel={'noopener'}
+                          target={'_blank'}
+                        >
                           <FontAwesomeIcon icon={['fab', 'twitter']} />
                         </IconButton>
-                        <IconButton className={styles.social}>
+                        <IconButton
+                          className={styles.social}
+                          component={'a'}
+                          href={'https://medium.com/sysi'}
+                          rel={'noopener'}
+                          target={'_blank'}
+                        >
                           <FontAwesomeIcon icon={['fab', 'medium']} />
                         </IconButton>
                       </Box>
