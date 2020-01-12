@@ -10,14 +10,21 @@ import IconButton from '@material-ui/core/IconButton';
 import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(({ palette }) => ({
   item: {
     padding: '20px 16px',
+    paddingRight: 56,
     marginBottom: 8,
     borderRadius: 8,
     flexDirection: 'column',
     backgroundColor: '#fff',
     alignItems: 'flex-start',
+    border: '2px solid',
+    borderColor: 'rgba(0,0,0,0)',
+    '&:hover': {
+      backgroundColor: '#fff',
+      borderColor: palette.grey[100],
+    },
   },
   question: {
     margin: 0,
@@ -40,7 +47,11 @@ const FAQ = () => {
           <h1>คำถามที่พบบ่อย</h1>
           <List>
             {getData().map(({ question, answer }) => (
-              <ListItem className={styles.item}>
+              <ListItem
+                className={styles.item}
+                button
+                onClick={() => setOpenKey(openKey === question ? '' : question)}
+              >
                 <p className={styles.question}>
                   <b>{question}</b>
                 </p>
