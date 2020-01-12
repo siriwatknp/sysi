@@ -371,6 +371,8 @@ const IndexPage = () => {
             <Box maxWidth={240}>
               <img className={styles.logo} src={sss_logo} alt={'sponsor'} />
             </Box>
+            <br />
+            <br />
           </Box>
         </Box>
       </Container>
