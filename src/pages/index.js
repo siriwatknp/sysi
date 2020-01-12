@@ -1,15 +1,30 @@
 import React from 'react';
+import { Link } from 'gatsby';
+import { Element } from 'react-scroll';
 import { makeStyles } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import Divider from '@material-ui/core/Divider';
 import SupportInfo from '../components/SupportInfo';
 import LevelInfo from '../components/LevelInfo';
 import Banner from '../components/Banner';
 import SEO from '../components/seo';
-import crew from '../images/sysi_crew.jpg';
+import sysi_logo from '../images/sysi_logo.jpg';
+import influencer_logo from '../images/influencer_logo.jpg';
+import achieve_logo from '../images/a-chieve_logo.jpg';
+import doplus_logo from '../images/doplus_logo.jpg';
+import newgeneration_logo from '../images/new-generation_logo.jpg';
+import sss_logo from '../images/sss_logo.jpg';
+import thoughtworks_logo from '../images/thoughtworks_logo.jpg';
+import doodleA from '../images/doodle-A.png';
+import doodleB from '../images/doodle-B.png';
+import doodleC from '../images/doodle-C.png';
+import doodleD from '../images/doodle-D.png';
+import doodleE from '../images/doodle-E.png';
+import doodleF from '../images/doodle-F.png';
 
 const useStyles = makeStyles(({ breakpoints }) => ({
   title: {
@@ -58,6 +73,17 @@ const useStyles = makeStyles(({ breakpoints }) => ({
     lineHeight: 1.5,
     letterSpacing: 0.5,
   },
+  heading: {
+    lineHeight: 1.4,
+    textAlign: 'center',
+  },
+  logo: {
+    maxHeight: 120,
+    margin: 0,
+  },
+  doodle: {
+    maxHeight: 200,
+  },
 }));
 
 const IndexPage = () => {
@@ -92,18 +118,19 @@ const IndexPage = () => {
       </Box>
       <Box bgcolor={'grey.50'}>
         <Container>
-          <Box py={3}>
-            <h2>เราเป็นใคร</h2>
-            <h3>Lorem ipsum dolor sit amet Ut enim ad minim veniam</h3>
+          <Box py={{ xs: 5, sm: 8, md: 10 }} maxWidth={700} mx={'auto'}>
+            <h2 className={styles.heading}>
+              หากคุณเป็นคนรุ่นใหม่ที่มีฝัน อยากร่วมเปลี่ยนแปลงสังคมในด้านต่างๆ
+              มาร่วมเปลี่ยนแปลงไปพร้อมกับเรา!
+            </h2>
             <br />
             <Paper>
-              <Box p={2}>
-                <b>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo
-                </b>
+              <Box p={2} lineHeight={2} fontSize={18}>
+                เครือข่ายนวัตกรรมคนรุ่นใหม่
+                สนับสนุนคนรุ่นใหม่ทั่วประเทศที่ต้องการเปลี่ยนแปลงสังคมรอบตัว
+                ผ่านการทดลองทําโครงการไปจนถึงขยับขยายก่อตั้งองค์กรของตนเอง
+                จะเป็นการแก้ปัญหาและพัฒนาสังคมในประเด็นไหนก็ได้
+                และด้วยวิธีการอะไรก็ได้
               </Box>
             </Paper>
           </Box>
@@ -123,8 +150,9 @@ const IndexPage = () => {
                 title={'เงินทุน • FUNDING'}
                 content={
                   <>
-                    เข้าถึงเงินทุนสําหรับสนับสนุนการทํากิจกรรมไปจนถึงการก่อตั้งองค์กร
-                    ตั้งแต่ <br /> 10,000 บาท - 650,000 บาท
+                    เข้าถึงเงินทุนสําหรับสนับสนุนการทําโครงการไปจนถึงการก่อตั้งองค์กร
+                    ตั้งแต่ ระดับไม่เกิน 20,000 บาท ไม่เกิน 50,000 บาท
+                    และไม่เกิน 650,000 บาท
                   </>
                 }
               />
@@ -134,7 +162,7 @@ const IndexPage = () => {
                 icon={<FontAwesomeIcon icon={['fad', 'book-spells']} />}
                 title={'ทักษะ • TRAINING'}
                 content={
-                  'พัฒนาความรู้และทักษะที่จําเป็นต่อการพัฒนาตนเอง พัฒนาทีมและพัฒนาโครงการ ไม่ว่าจะเป็นวิธีคิด เครื่องมือ'
+                  'พัฒนาความรู้และทักษะที่จําเป็นต่อการพัฒนาตนเอง พัฒนาทีม และพัฒนาโครงการ ไม่ว่า จะเป็นวิธีคิด เครื่องมือ ความรู้ทางสังคม และการบริหารโครงการ'
                 }
               />
             </Grid>
@@ -159,103 +187,192 @@ const IndexPage = () => {
           </Grid>
         </Box>
       </Container>
-      <Box bgcolor={'grey.50'}>
-        <Container>
-          <Box py={{ xs: 5, sm: 8, md: 10 }}>
-            <h2>
-              <Box align={'center'} pb={{ sm: 3, md: 5 }}>
-                ระดับที่เราสนับสนุน
-              </Box>
-            </h2>
-            <Grid container spacing={4} justify={'center'}>
-              <Grid item xs={12} sm={6} md={4}>
-                <LevelInfo
-                  title={'ระดับเริ่มต้น • Rookie'}
-                  extra={'เปิดรับสมัครแล้ว! หมดเขต 1 เม.ย 63'}
-                  content={
-                    <>
-                      <h4 className={styles.content}>
-                        สําหรับผู้ที่มีไอเดียในการแก้ปัญหาสังคมที่ตนเองพบเจอ
-                        และอยากจะทดลองทําเพื่อแก้ปัญหานั้นให้ได้
-                      </h4>
-                      • อายุระหว่าง 15-25 ปี
-                      <br />
-                      • จํานวนสมาชิก 1-3 คน
-                      <br />
-                      • ระยะเวลาทําโครงการ 3-5 เดือน
-                      <br />• ทุนสนับสุนน 10,000-20,000 บาท
-                    </>
-                  }
-                  actions={[
-                    {
-                      label: 'โหลดใบสมัคร',
-                      variant: 'contained',
-                      color: 'primary',
-                    },
-                    { label: 'อ่านรายละเอียด', variant: 'contained' },
-                  ]}
-                />
+      <Element name={'courses'}>
+        <Box bgcolor={'grey.50'}>
+          <Container>
+            <Box py={{ xs: 5, sm: 8, md: 10 }}>
+              <h2>
+                <Box align={'center'} pb={{ sm: 3, md: 5 }}>
+                  ระดับที่เราสนับสนุน
+                </Box>
+              </h2>
+              <Grid container spacing={4} justify={'center'}>
+                <Grid item xs={12} sm={6} md={4}>
+                  <LevelInfo
+                    title={'ระดับเริ่มต้น • Rookie'}
+                    extra={'เปิดรับสมัครแล้ว ถึง 28 ก.พ. 63'}
+                    content={
+                      <>
+                        <h4 className={styles.content}>
+                          สําหรับผู้ที่มีไอเดียในการแก้ปัญหาสังคมที่ตนเองพบเจอ
+                          และอยากจะทดลองทําเพื่อแก้ปัญหานั้นให้ได้
+                        </h4>
+                        • อายุระหว่าง 15-25 ปี
+                        <br />
+                        • จํานวนสมาชิก 1-3 คน
+                        <br />
+                        • ระยะเวลาทําโครงการ 3-5 เดือน
+                        <br />• ทุนสนับสุนน ไม่เกิน 20,000 บาท
+                      </>
+                    }
+                    actions={[
+                      {
+                        label: 'โหลดใบสมัคร',
+                        variant: 'contained',
+                        color: 'primary',
+                      },
+                      {
+                        label: 'อ่านรายละเอียด',
+                        variant: 'contained',
+                        component: Link,
+                        to: '/courses/rookie',
+                      },
+                    ]}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <LevelInfo
+                    title={'ระดับกลาง • Semi-Pro'}
+                    content={
+                      <>
+                        <h4 className={styles.content}>
+                          สําหรับกลุ่มที่ต้องการขยับขยายให้สิ่งที่ทําสร้างผลกระทบทางสังคมมากขึ้น
+                          จริงจังมากขึ้น
+                        </h4>
+                        • อายุระหว่าง 15-27 ปี
+                        <br />
+                        • จํานวนสมาชิก 2-5 คน
+                        <br />
+                        • ระยะเวลาทําโครงการ 3-6 เดือน
+                        <br />• ทุนสนับสุนน ไม่เกิน 50,000 บาท
+                      </>
+                    }
+                    actions={[
+                      { label: 'อ่านรายละเอียด', variant: 'contained' },
+                    ]}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <LevelInfo
+                    title={'ระดับใกล้โปร • Turn-Pro'}
+                    content={
+                      <>
+                        <h4 className={styles.content}>
+                          สําหรับกลุ่มที่ต้องการจริงจังกับการแก้ปัญหาในประเด็นที่ทําและต้องการการสนับสนุน
+                          เพื่่อสร้างองค์กรของตนเองสําหรับทํางานต่อในระยะยาว
+                        </h4>
+                        • อายุระหว่าง 20-30 ปี
+                        <br />
+                        • จํานวนสมาชิก 3-5 คน
+                        <br />
+                        • ระยะเวลาทําโครงการ 10-12 เดือน
+                        <br />• ทุนสนับสุนน ไม่เกิน 650,000 บาท
+                      </>
+                    }
+                    actions={[
+                      { label: 'อ่านรายละเอียด', variant: 'contained' },
+                    ]}
+                  />
+                </Grid>
               </Grid>
-              <Grid item xs={12} sm={6} md={4}>
-                <LevelInfo
-                  title={'ระดับกลาง • Semi-Pro'}
-                  content={
-                    <>
-                      <h4 className={styles.content}>
-                        สําหรับกลุ่มที่ต้องการขยับขยายให้สิ่งที่ทําสร้างผลกระทบทางสังคมมากขึ้น
-                        จริงจังมากขึ้น
-                      </h4>
-                      • อายุระหว่าง 15-27 ปี
-                      <br />
-                      • จํานวนสมาชิก 2-5 คน
-                      <br />
-                      • ระยะเวลาทําโครงการ 3-6 เดือน
-                      <br />• ทุนสนับสุนน 30,000-50,000 บาท
-                    </>
-                  }
-                  actions={[{ label: 'อ่านรายละเอียด', variant: 'contained' }]}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={4}>
-                <LevelInfo
-                  title={'ระดับใกล้โปร • Turn-Pro'}
-                  content={
-                    <>
-                      <h4 className={styles.content}>
-                        สําหรับกลุ่มที่ต้องการจริงจังกับการแก้ปัญหาในประเด็นที่ทําและต้องการการสนับสนุน
-                        เพื่่อสร้างองค์กรของตนเองสําหรับทํางานต่อในระยะยาว
-                      </h4>
-                      • อายุระหว่าง 20-30 ปี
-                      <br />
-                      • จํานวนสมาชิก 3-5 คน
-                      <br />
-                      • ระยะเวลาทําโครงการ 10-12 เดือน
-                      <br />• ทุนสนับสุนน 300,000-650,000 บาท
-                    </>
-                  }
-                  actions={[{ label: 'อ่านรายละเอียด', variant: 'contained' }]}
-                />
-              </Grid>
-            </Grid>
-          </Box>
-        </Container>
-      </Box>
+            </Box>
+          </Container>
+        </Box>
+      </Element>
       <Container>
-        <Box py={{ xs: 5, sm: 8, md: 10 }}>
+        <Box py={{ xs: 5, sm: 8, md: 10 }} textAlign={'center'}>
+          <h3>ลักษณะผู้เข้าร่วมและโครงการที่เราค้นหา</h3>
+          <br />
+          <Grid container spacing={4} justify={'center'}>
+            <Grid item xs={6} sm={4}>
+              <img className={styles.doodle} alt={'doodle'} src={doodleA} />
+              <p>มีศักยภาพและความมุ่งมั่น</p>
+            </Grid>
+            <Grid item xs={6} sm={4}>
+              <img className={styles.doodle} alt={'doodle'} src={doodleB} />
+              <p>พร้อมที่จะเรียนรู้ร่วมกับเพื่อนอย่างเข้มข้น</p>
+            </Grid>
+            <Grid item xs={6} sm={4}>
+              <img className={styles.doodle} alt={'doodle'} src={doodleC} />
+              <p>แก้ปัญหาตรงจุด และเป็นไปได้</p>
+            </Grid>
+            <Grid item xs={6} sm={4}>
+              <img className={styles.doodle} alt={'doodle'} src={doodleD} />
+              <p>สร้างสรรค์ คิดการใหญ่</p>
+            </Grid>
+            <Grid item xs={6} sm={4}>
+              <img className={styles.doodle} alt={'doodle'} src={doodleE} />
+              <p>เห็นโอกาสเติบโต สร้างผลกระทบทางสังคมเพิ่ม</p>
+            </Grid>
+            <Grid item xs={6} sm={4}>
+              <img className={styles.doodle} alt={'doodle'} src={doodleF} />
+              <p>เกิดผลยั่งยืน กับกลุ่มเป้าหมาย</p>
+            </Grid>
+          </Grid>
+        </Box>
+      </Container>
+      <Divider light />
+      <Container>
+        <Box py={{ xs: 2, sm: 4, md: 6 }}>
           <Box align={'center'}>
             <h3>ทีมงาน</h3>
-            <Box maxWidth={{ sm: 600, md: 700, lg: 800 }}>
-              <img src={crew} alt={'crew'} />
+            <br />
+            <Box mb={5}>
+              <Grid container spacing={4} justify={'center'}>
+                <Grid item>
+                  <img
+                    className={styles.logo}
+                    alt={'sysi logo'}
+                    src={sysi_logo}
+                  />
+                </Grid>
+                <Grid item>
+                  <img
+                    className={styles.logo}
+                    alt={'influencer logo'}
+                    src={influencer_logo}
+                  />
+                </Grid>
+                <Grid item>
+                  <img
+                    className={styles.logo}
+                    alt={'achieve logo'}
+                    src={achieve_logo}
+                  />
+                </Grid>
+                <Grid item>
+                  <img
+                    className={styles.logo}
+                    alt={'doplus logo'}
+                    src={doplus_logo}
+                  />
+                </Grid>
+                <Grid item>
+                  <img
+                    className={styles.logo}
+                    alt={'new generation logo'}
+                    src={newgeneration_logo}
+                  />
+                </Grid>
+                <Grid item>
+                  <img
+                    className={styles.logo}
+                    alt={'new generation logo'}
+                    src={thoughtworks_logo}
+                  />
+                </Grid>
+              </Grid>
             </Box>
+            <Divider light />
+            <br />
+            <br />
             <h3>สนับสนุนโดย</h3>
+            <br />
             <Box maxWidth={240}>
-              <img
-                src={
-                  'https://upload.wikimedia.org/wikipedia/th/a/a4/%E0%B9%82%E0%B8%A5%E0%B9%82%E0%B8%81%E0%B9%89_%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_%E0%B8%AA%E0%B8%AA%E0%B8%AA_%E0%B8%AA%E0%B8%B3%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%81%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B8%E0%B8%99%E0%B8%AA%E0%B8%99%E0%B8%B1%E0%B8%9A%E0%B8%AA%E0%B8%99%E0%B8%B8%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%AA%E0%B8%A3%E0%B8%B4%E0%B8%A1%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%A0%E0%B8%B2%E0%B8%9E.png'
-                }
-                alt={'sponsor'}
-              />
+              <img className={styles.logo} src={sss_logo} alt={'sponsor'} />
             </Box>
+            <br />
+            <br />
           </Box>
         </Box>
       </Container>

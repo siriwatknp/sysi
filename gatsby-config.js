@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `SYSI Title`,
-    description: `SYSI description`,
-    author: `@gatsbyjs`,
+    title: `SYSI — เครือข่ายนวัตกรรมคนรุ่นใหม่`,
+    description: `สมัครเข้าร่วม "โครงการสนับสนุนคนรุ่นใหม่ที่ต้องการสร้างนวัตกรรมเพื่อแก้ปัญหาสังคม"`,
+    author: `@sysithailand`,
   },
   plugins: [
     {

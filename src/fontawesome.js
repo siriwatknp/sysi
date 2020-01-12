@@ -4,6 +4,7 @@ import {
   faFacebookF,
   faFacebook,
   faMedium,
+  faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import {
@@ -11,6 +12,10 @@ import {
   faBookSpells,
   faMonitorHeartRate,
   faChartNetwork,
+  faClipboardListCheck,
+  faCalendarAlt,
+  faBooks,
+  faInfoCircle,
 } from '@fortawesome/pro-duotone-svg-icons';
 
 library.add(
@@ -18,9 +23,14 @@ library.add(
   faBookSpells,
   faMonitorHeartRate,
   faChartNetwork,
+  faClipboardListCheck,
+  faCalendarAlt
+  faBooks,
+  faInfoCircle,
   faEnvelope,
   faFacebook,
   faTwitter,
   faMedium,
-  faFacebookF
+  faFacebookF,
+  faInstagram
 );
