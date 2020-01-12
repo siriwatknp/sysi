@@ -43,7 +43,6 @@ const EventItem = ({ startDate, endDate, title, description }) => {
       borderColor={'grey.100'}
       bgcolor={'common.white'}
       p={{ xs: 2, sm: 2.5, md: 3 }}
-      pb={{ xs: 0.5, sm: 1, md: 1.5 }}
     >
       <Grid container>
         <Grid item>

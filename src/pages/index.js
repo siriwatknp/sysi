@@ -7,6 +7,7 @@ import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import Divider from '@material-ui/core/Divider';
 import SupportInfo from '../components/SupportInfo';
 import LevelInfo from '../components/LevelInfo';
 import Banner from '../components/Banner';
@@ -18,6 +19,12 @@ import doplus_logo from '../images/doplus_logo.jpg';
 import newgeneration_logo from '../images/new-generation_logo.jpg';
 import sss_logo from '../images/sss_logo.jpg';
 import thoughtworks_logo from '../images/thoughtworks_logo.jpg';
+import doodleA from '../images/doodle-A.png';
+import doodleB from '../images/doodle-B.png';
+import doodleC from '../images/doodle-C.png';
+import doodleD from '../images/doodle-D.png';
+import doodleE from '../images/doodle-E.png';
+import doodleF from '../images/doodle-F.png';
 
 const useStyles = makeStyles(({ breakpoints }) => ({
   title: {
@@ -74,6 +81,9 @@ const useStyles = makeStyles(({ breakpoints }) => ({
     maxHeight: 120,
     margin: 0,
   },
+  doodle: {
+    maxHeight: 200,
+  },
 }));
 
 const IndexPage = () => {
@@ -115,7 +125,7 @@ const IndexPage = () => {
             </h2>
             <br />
             <Paper>
-              <Box p={2} lineHeight={2}>
+              <Box p={2} lineHeight={2} fontSize={18}>
                 เครือข่ายนวัตกรรมคนรุ่นใหม่
                 สนับสนุนคนรุ่นใหม่ทั่วประเทศที่ต้องการเปลี่ยนแปลงสังคมรอบตัว
                 ผ่านการทดลองทําโครงการไปจนถึงขยับขยายก่อตั้งองค์กรของตนเอง
@@ -270,9 +280,43 @@ const IndexPage = () => {
         </Box>
       </Element>
       <Container>
-        <Box py={{ xs: 5, sm: 8, md: 10 }}>
+        <Box py={{ xs: 5, sm: 8, md: 10 }} textAlign={'center'}>
+          <h3>ลักษณะผู้เข้าร่วมและโครงการที่เราค้นหา</h3>
+          <br />
+          <Grid container spacing={4} justify={'center'}>
+            <Grid item xs={6} sm={4}>
+              <img className={styles.doodle} alt={'doodle'} src={doodleA} />
+              <p>มีศักยภาพและความมุ่งมั่น</p>
+            </Grid>
+            <Grid item xs={6} sm={4}>
+              <img className={styles.doodle} alt={'doodle'} src={doodleB} />
+              <p>พร้อมที่จะเรียนรู้ร่วมกับเพื่อนอย่างเข้มข้น</p>
+            </Grid>
+            <Grid item xs={6} sm={4}>
+              <img className={styles.doodle} alt={'doodle'} src={doodleC} />
+              <p>แก้ปัญหาตรงจุด และเป็นไปได้</p>
+            </Grid>
+            <Grid item xs={6} sm={4}>
+              <img className={styles.doodle} alt={'doodle'} src={doodleD} />
+              <p>สร้างสรรค์ คิดการใหญ่</p>
+            </Grid>
+            <Grid item xs={6} sm={4}>
+              <img className={styles.doodle} alt={'doodle'} src={doodleE} />
+              <p>เห็นโอกาสเติบโต สร้างผลกระทบทางสังคมเพิ่ม</p>
+            </Grid>
+            <Grid item xs={6} sm={4}>
+              <img className={styles.doodle} alt={'doodle'} src={doodleF} />
+              <p>เกิดผลยั่งยืน กับกลุ่มเป้าหมาย</p>
+            </Grid>
+          </Grid>
+        </Box>
+      </Container>
+      <Divider light />
+      <Container>
+        <Box py={{ xs: 2, sm: 4, md: 6 }}>
           <Box align={'center'}>
             <h3>ทีมงาน</h3>
+            <br />
             <Box mb={5}>
               <Grid container spacing={4} justify={'center'}>
                 <Grid item>
@@ -319,7 +363,11 @@ const IndexPage = () => {
                 </Grid>
               </Grid>
             </Box>
+            <Divider light />
+            <br />
+            <br />
             <h3>สนับสนุนโดย</h3>
+            <br />
             <Box maxWidth={240}>
               <img className={styles.logo} src={sss_logo} alt={'sponsor'} />
             </Box>
