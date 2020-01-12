@@ -10,10 +10,11 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Hidden from '@material-ui/core/Hidden';
 import ListItem from '@material-ui/core/ListItem';
-import EventItem from '../components/EventItem';
 import CloudDownload from '@material-ui/icons/CloudDownload';
+import { lightBlue } from '@material-ui/core/colors';
+import EventItem from '../components/EventItem';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(({ palette }) => ({
   listItem: {
     borderRadius: 4,
     marginLeft: 16,
@@ -26,13 +27,16 @@ const useStyles = makeStyles(() => ({
     fontSize: 18,
   },
   elmLinkMobile: {
+    fontSize: 28,
     minHeight: 56,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    color: palette.grey[500],
   },
   elmLinkMobileActive: {
     fontWeight: 'bold',
+    color: lightBlue[900],
   },
   download: {
     margin: 'auto',
