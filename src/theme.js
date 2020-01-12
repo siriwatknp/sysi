@@ -45,6 +45,11 @@ export default responsiveFontSizes(
     },
     overrides: {
       MuiButton: {
+        text: {
+          '&:hover': {
+            backgroundColor: blueGrey[50],
+          },
+        },
         contained: {
           backgroundColor: blueGrey[50],
           color: blueGrey[600],
