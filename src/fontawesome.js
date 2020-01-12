@@ -12,6 +12,10 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 //   faBookSpells,
 //   faMonitorHeartRate,
 //   faChartNetwork,
+//   faClipboardListCheck,
+//   faCalendarAlt,
+//   faBooks,
+//   faInfoCircle,
 // } from '@fortawesome/pro-duotone-svg-icons';
 
 library.add(
@@ -19,6 +23,10 @@ library.add(
   // faBookSpells,
   // faMonitorHeartRate,
   // faChartNetwork,
+  // faClipboardListCheck,
+  // faCalendarAlt
+  // faBooks,
+  // faInfoCircle,
   faEnvelope,
   faFacebook,
   faTwitter,

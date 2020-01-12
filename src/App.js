@@ -32,7 +32,7 @@ import {
 } from '@mui-treasury/layout';
 import theme from './theme';
 import logo from './images/sysi_logo.jpg';
-import './fontawesmoe';
+import './fontawesome';
 
 const config = ScreenConfigGenerator();
 config.add('xs', screen => {
@@ -166,7 +166,7 @@ const StylesProvider = ({ children }) => {
   return children(styles);
 };
 
-const App = ({ children }) => {
+const App = ({ location, children }) => {
   const [open, setOpen] = React.useState(false);
   return (
     <Root theme={theme} config={config.get()}>
@@ -249,18 +249,20 @@ const App = ({ children }) => {
                         ถาม-ตอบ
                       </Button>
                     </Hidden>
-                    <Button
-                      component={ScrollLink}
-                      to={'courses'}
-                      smooth
-                      offset={-56}
-                      duration={800}
-                      variant={'contained'}
-                      color={'primary'}
-                      className={styles.register}
-                    >
-                      สมัคร
-                    </Button>
+                    {location.pathname === '/' && (
+                      <Button
+                        component={ScrollLink}
+                        to={'courses'}
+                        smooth
+                        offset={-56}
+                        duration={800}
+                        variant={'contained'}
+                        color={'primary'}
+                        className={styles.register}
+                      >
+                        สมัคร
+                      </Button>
+                    )}
                   </Box>
                 </Toolbar>
               </Header>

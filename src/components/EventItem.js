@@ -47,8 +47,8 @@ const EventItem = ({ startDate, endDate, title, description }) => {
     >
       <Grid container>
         <Grid item>
-          <Box display={'flex'} mr={5} minWidth={96}>
-            {startDate && (
+          {startDate && (
+            <Box display={'flex'} mr={5} minWidth={96}>
               <div>
                 <Box display={'flex'} alignItems={'center'}>
                   <h2 className={styles.day}>{startDate.day}</h2>
@@ -64,16 +64,16 @@ const EventItem = ({ startDate, endDate, title, description }) => {
                 </Box>
                 <h4 className={styles.month}>{startDate.month}</h4>
               </div>
-            )}
-            {endDate && (
-              <>
-                <div>
-                  <h2 className={styles.day}>{endDate.day}</h2>
-                  <h4 className={styles.month}>{endDate.month}</h4>
-                </div>
-              </>
-            )}
-          </Box>
+              {endDate && (
+                <>
+                  <div>
+                    <h2 className={styles.day}>{endDate.day}</h2>
+                    <h4 className={styles.month}>{endDate.month}</h4>
+                  </div>
+                </>
+              )}
+            </Box>
+          )}
         </Grid>
         <Grid item xs={12} sm>
           <div className={styles.title}>{title}</div>
@@ -86,10 +86,10 @@ const EventItem = ({ startDate, endDate, title, description }) => {
 
 EventItem.propTypes = {
   startDate: PropTypes.shape({
-    day: PropTypes.number,
+    day: PropTypes.node,
     month: PropTypes.string,
   }),
-  endDate: PropTypes.shape({ day: PropTypes.number, month: PropTypes.string }),
+  endDate: PropTypes.shape({ day: PropTypes.node, month: PropTypes.string }),
   title: PropTypes.string,
   description: PropTypes.node,
 };

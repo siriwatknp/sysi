@@ -51,6 +51,9 @@ export default responsiveFontSizes(
           },
         },
         contained: {
+          borderRadius: 40,
+          paddingLeft: 20,
+          paddingRight: 20,
           backgroundColor: blueGrey[50],
           color: blueGrey[600],
           boxShadow: 'none',
@@ -60,6 +63,7 @@ export default responsiveFontSizes(
           '&:focus': {
             boxShadow: 'none',
           },
+
         },
         containedPrimary: {
           color: '#fff',

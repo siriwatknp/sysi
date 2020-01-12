@@ -1,61 +1,76 @@
 import React from 'react';
 import Course from '../../templates/Course';
 
-const Rookie = () => (
+const TurnPro = () => (
   <Course
-    title={'ระดับเริ่มต้น • Rookie'}
-    downloadUrl={'https://drive.google.com/file/d/1-BvfvmxaeoRKt4_WMYRAz9ObeTl6O14B/view?usp=sharing'}
+    title={'ระดับใกล้โปร • Turn-Pro'}
     description={
       <>
-        สำหรับผู้ที่มีไอเดียแก้ปัญหาสังคมที่ตนเองพบเจอ
-        และอยากจะทดลองทำเพื่อแก้ปัญหานั้นให้ได้
-        ผู้สมัครอาจจะมีประสบการณ์แก้ปัญหานั้นๆ
-        มาบ้างแล้วหรือยังไม่มีประสบการณ์เลยก็ได้
+        สำหรับกลุ่มที่ต้องการจริงจังกับการแก้ปัญหาในประเด็นที่ทำ
+        และต้องการการสนับสนุนเพื่อสร้างองค์กรของตนเองสำหรับทำงานต่อในระยะยาว
+        <br />
+        สมาชิกในทีมมีประสบการณ์ในการทำงานในประเด็นนั้นๆ มาพอสมควร
       </>
     }
     condition={
       <ul>
-        <li>อายุระหว่าง 15 - 25 ปี</li>
-        <li>จำนวนสมาชิก 1 - 3 คน</li>
-        <li>ทุนสนับสนุนไม่เกิน 20,000 บาท</li>
-        <li>ทำนวัตกรรม / โครงการระหว่าง เดือน เม.ย. 63 - ก.ย. 63 (4 เดือน)</li>
+        <li>อายุระหว่าง 20 - 30 ปี</li>
+        <li>จำนวนสมาชิก 3 - 5 คน</li>
+        <li>ทุนสนับสนุนไม่เกิน 650,000 บาท</li>
+        <li>ทำนวัตกรรม / โครงการระหว่าง เดือน ก.ค. 63 - เม.ย. 64 (10 เดือน)</li>
         <li>สามารถเข้าร่วมกิจกรรมของโครงการตามตารางได้ทุกครั้ง</li>
       </ul>
     }
     timeline={[
       {
-        startDate: { day: 10, month: 'ม.ค. 63' },
-        endDate: { day: 28, month: 'ก.พ. 63' },
+        startDate: { day: 2, month: 'มี.ค. 63' },
+        endDate: { day: 30, month: 'เม.ย. 63' },
         title: 'รับสมัคร',
-        description: <>สำหรับส่งทางไปรษณีย์ หมดเขตวันที่ 24 ก.พ. 63</>,
+        description: <>สำหรับส่งทางไปรษณีย์ หมดเขตวันที่ 27 เม.ย. 63</>,
       },
       {
-        startDate: { day: 3, month: 'มี.ค. 63' },
+        startDate: { day: 8, month: 'พ.ค. 63' },
         title: 'ประกาศผลรอบใบสมัคร',
       },
       {
-        startDate: { day: 7, month: 'มี.ค. 63' },
-        endDate: { day: 7 },
+        startDate: { day: 16, month: 'พ.ค. 63' },
+        title: 'สัมภาษณ์ที่กรุงเทพ',
+      },
+      {
+        startDate: { day: 20, month: 'พ.ค. 63' },
         title: 'ประกาศผลรอบสัมภาษณ์',
       },
       {
-        startDate: { day: 4, month: 'เม.ย. 63' },
-        endDate: { day: 7 },
+        startDate: { day: 19, month: 'มิ.ย. 63' },
+        endDate: { day: 22 },
         title: 'ปฐมนิเทศ',
+        description: '4 วัน 3 คืน',
       },
       {
-        startDate: { day: 5, month: 'มิ.ย. 63' },
-        endDate: { day: 7 },
-        title: 'Workshop ติดอาวุธ',
+        startDate: { day: 4, month: 'ก.ย. 64' },
+        endDate: { day: 6 },
+        title: 'Workshop ติดอาวุธ - 1',
+        description: '3 วัน 2 คืน',
       },
       {
-        startDate: { day: 4, month: 'ก.ค. 63' },
-        endDate: { day: 5 },
         title: 'ลงพื้นที่เรียนรู้ (Field Trip)',
+        description: 'ระหว่างเดือน ต.ค. - พ.ย. 63',
       },
       {
-        startDate: { day: 7, month: 'ส.ค. 63' },
-        endDate: { day: 9 },
+        startDate: { day: 11, month: 'ธ.ค. 63' },
+        endDate: { day: 13 },
+        title: 'Workshop ติดอาวุธ - 2',
+        description: '3 วัน 2 คืน',
+      },
+      {
+        startDate: { day: 5, month: 'มี.ค. 63' },
+        endDate: { day: 7 },
+        title: 'Workshop ติดอาวุธ - 3',
+        description: '3 วัน 2 คืน',
+      },
+      {
+        startDate: { day: 14, month: 'พ.ค. 64' },
+        endDate: { day: 16 },
         title: 'ถอดบทเรียน',
       },
     ]}
@@ -122,4 +137,4 @@ const Rookie = () => (
   />
 );
 
-export default Rookie;
+export default TurnPro;

@@ -1,61 +1,64 @@
 import React from 'react';
 import Course from '../../templates/Course';
 
-const Rookie = () => (
+const SemiPro = () => (
   <Course
-    title={'ระดับเริ่มต้น • Rookie'}
-    downloadUrl={'https://drive.google.com/file/d/1-BvfvmxaeoRKt4_WMYRAz9ObeTl6O14B/view?usp=sharing'}
+    title={'ระดับกลาง • Semi-Pro'}
     description={
       <>
-        สำหรับผู้ที่มีไอเดียแก้ปัญหาสังคมที่ตนเองพบเจอ
-        และอยากจะทดลองทำเพื่อแก้ปัญหานั้นให้ได้
-        ผู้สมัครอาจจะมีประสบการณ์แก้ปัญหานั้นๆ
-        มาบ้างแล้วหรือยังไม่มีประสบการณ์เลยก็ได้
+        เหมาะสำหรับกลุ่มที่ต้องการขยับขยายให้สิ่งที่ทำสร้างผลกระทบทางสังคมมากขึ้น
+        จริงจังมากขึ้น ผู้สมัครมีประสบการณ์ในการทำสิ่งนั้นๆ มาก่อนแล้ว
       </>
     }
     condition={
       <ul>
-        <li>อายุระหว่าง 15 - 25 ปี</li>
-        <li>จำนวนสมาชิก 1 - 3 คน</li>
-        <li>ทุนสนับสนุนไม่เกิน 20,000 บาท</li>
-        <li>ทำนวัตกรรม / โครงการระหว่าง เดือน เม.ย. 63 - ก.ย. 63 (4 เดือน)</li>
+        <li>อายุระหว่าง 15 - 27 ปี</li>
+        <li>จำนวนสมาชิก 2 - 5 คน</li>
+        <li>ทุนสนับสนุนไม่เกิน 50,000 บาท</li>
+        <li>ทำนวัตกรรม / โครงการระหว่าง เดือน พ.ย. 63 - เม.ย. 64 (6 เดือน)</li>
         <li>สามารถเข้าร่วมกิจกรรมของโครงการตามตารางได้ทุกครั้ง</li>
       </ul>
     }
     timeline={[
       {
-        startDate: { day: 10, month: 'ม.ค. 63' },
-        endDate: { day: 28, month: 'ก.พ. 63' },
+        startDate: { day: 1, month: 'ส.ค. 63' },
+        endDate: { day: 30, month: 'ก.ย. 63' },
         title: 'รับสมัคร',
-        description: <>สำหรับส่งทางไปรษณีย์ หมดเขตวันที่ 24 ก.พ. 63</>,
+        description: <>สำหรับส่งทางไปรษณีย์ หมดเขตวันที่ 25 ก.ย. 63</>,
       },
       {
-        startDate: { day: 3, month: 'มี.ค. 63' },
+        startDate: { day: 3, month: 'ต.ค. 63' },
         title: 'ประกาศผลรอบใบสมัคร',
       },
       {
-        startDate: { day: 7, month: 'มี.ค. 63' },
-        endDate: { day: 7 },
+        startDate: { day: 17, month: 'ต.ค. 63' },
+        title: 'สัมภาษณ์ตามภาค',
+      },
+      {
+        startDate: { day: 21, month: 'ต.ค. 63' },
         title: 'ประกาศผลรอบสัมภาษณ์',
       },
       {
-        startDate: { day: 4, month: 'เม.ย. 63' },
-        endDate: { day: 7 },
-        title: 'ปฐมนิเทศ',
-      },
-      {
-        startDate: { day: 5, month: 'มิ.ย. 63' },
-        endDate: { day: 7 },
-        title: 'Workshop ติดอาวุธ',
-      },
-      {
-        startDate: { day: 4, month: 'ก.ค. 63' },
-        endDate: { day: 5 },
-        title: 'ลงพื้นที่เรียนรู้ (Field Trip)',
-      },
-      {
-        startDate: { day: 7, month: 'ส.ค. 63' },
+        startDate: { day: 6, month: 'พ.ย. 63' },
         endDate: { day: 9 },
+        title: 'ปฐมนิเทศ',
+        description: '4 วัน 3 คืน',
+      },
+      {
+        startDate: { day: 29, month: 'ม.ค. 64' },
+        endDate: { day: 31 },
+        title: 'Workshop ติดอาวุธ - 1',
+        description: '3 วัน 2 คืน',
+      },
+      {
+        startDate: { day: 19, month: 'มี.ค. 64' },
+        endDate: { day: 22 },
+        title: 'Workshop ติดอาวุธ - 2 และลงพื้นที่เรียนรู้ (Field Trip)',
+        description: '4 วัน 3 คืน',
+      },
+      {
+        startDate: { day: 14, month: 'พ.ค. 64' },
+        endDate: { day: 16 },
         title: 'ถอดบทเรียน',
       },
     ]}
@@ -122,4 +125,4 @@ const Rookie = () => (
   />
 );
 
-export default Rookie;
+export default SemiPro;
