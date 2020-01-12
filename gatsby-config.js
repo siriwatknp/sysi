@@ -49,8 +49,26 @@ module.exports = {
       },
     },
     `gatsby-plugin-material-ui`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-155133279-1`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `SYSI — เครือข่ายนวัตกรรมคนรุ่นใหม่`,
+        short_name: `SYSI`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#FF9A3E`,
+        display: `minimal-ui`,
+        icon: `src/images/sysi_logo.jpg`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 };
