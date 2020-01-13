@@ -10,6 +10,8 @@ import IconButton from '@material-ui/core/IconButton';
 import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp';
 
+import SEO from '../components/seo';
+
 const useStyles = makeStyles(({ palette }) => ({
   item: {
     padding: '20px 16px',
@@ -41,43 +43,49 @@ const FAQ = () => {
   const styles = useStyles();
   const [openKey, setOpenKey] = React.useState('');
   return (
-    <Box bgcolor={'grey.50'}>
-      <Container maxWidth={'md'}>
-        <Box py={{ xs: 3, sm: 5, md: 8 }}>
-          <h1>คำถามที่พบบ่อย</h1>
-          <List>
-            {getData().map(({ question, answer }) => (
-              <ListItem
-                className={styles.item}
-                button
-                onClick={() => setOpenKey(openKey === question ? '' : question)}
-              >
-                <p className={styles.question}>
-                  <b>{question}</b>
-                </p>
-                <Collapse in={openKey === question}>
-                  <div className={styles.answer}>{answer}</div>
-                </Collapse>
-                <ListItemSecondaryAction className={styles.action}>
-                  <IconButton
-                    aria-label="toggle"
-                    onClick={() =>
-                      setOpenKey(openKey === question ? '' : question)
-                    }
-                  >
-                    {openKey === question ? (
-                      <KeyboardArrowUp />
-                    ) : (
-                      <KeyboardArrowDown />
-                    )}
-                  </IconButton>
-                </ListItemSecondaryAction>
-              </ListItem>
-            ))}
-          </List>
-        </Box>
-      </Container>
-    </Box>
+    <>
+      <SEO title={'คำถามที่พบบ่อย • FAQs'} />
+      <Box bgcolor={'grey.50'}>
+        <Container maxWidth={'md'}>
+          <Box py={{ xs: 3, sm: 5, md: 8 }}>
+            <h1>คำถามที่พบบ่อย</h1>
+            <List>
+              {getData().map(({ question, answer }) => (
+                <ListItem
+                  key={question}
+                  className={styles.item}
+                  button
+                  onClick={() =>
+                    setOpenKey(openKey === question ? '' : question)
+                  }
+                >
+                  <p className={styles.question}>
+                    <b>{question}</b>
+                  </p>
+                  <Collapse in={openKey === question}>
+                    <div className={styles.answer}>{answer}</div>
+                  </Collapse>
+                  <ListItemSecondaryAction className={styles.action}>
+                    <IconButton
+                      aria-label="toggle"
+                      onClick={() =>
+                        setOpenKey(openKey === question ? '' : question)
+                      }
+                    >
+                      {openKey === question ? (
+                        <KeyboardArrowUp />
+                      ) : (
+                        <KeyboardArrowDown />
+                      )}
+                    </IconButton>
+                  </ListItemSecondaryAction>
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+        </Container>
+      </Box>
+    </>
   );
 };
 

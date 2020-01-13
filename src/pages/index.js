@@ -90,7 +90,7 @@ const IndexPage = () => {
   const styles = useStyles();
   return (
     <>
-      <SEO title="Home" />
+      <SEO />
       <Box
         color={'common.white'}
         bgcolor={'primary.main'}
@@ -217,9 +217,15 @@ const IndexPage = () => {
                     }
                     actions={[
                       {
+                        id: 'download-app-form-rookie',
                         label: 'โหลดใบสมัคร',
                         variant: 'contained',
                         color: 'primary',
+                        component: 'a',
+                        href:
+                          'https://drive.google.com/file/d/1-BvfvmxaeoRKt4_WMYRAz9ObeTl6O14B/view?usp=sharing',
+                        target: '_blank',
+                        rel: 'noopener',
                       },
                       {
                         label: 'อ่านรายละเอียด',

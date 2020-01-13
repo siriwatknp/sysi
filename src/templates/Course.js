@@ -68,7 +68,7 @@ const Rookie = ({
   condition,
   timeline,
   material,
-  downloadUrl,
+  downloadProps,
 }) => {
   const styles = useStyles();
   const gridStyles = useGridStyles();
@@ -77,7 +77,7 @@ const Rookie = ({
       <Container>
         <Box pb={{ xs: 3, sm: 5, md: 8 }}>
           <Grid container justify={'space-between'}>
-            <Grid md={1} />
+            <Grid item md={1} />
             <Grid item xs={12} sm={8} md={7}>
               <Element name={'about'}>
                 <Box pt={{ xs: 3, sm: 5, md: 8 }}>
@@ -160,14 +160,14 @@ const Rookie = ({
                       </ListItem>
                     </Link>
                   </Box>
-                  {downloadUrl && (
+                  {downloadProps && (
                     <Box mt={3} maxWidth={200}>
                       <Button
                         variant={'contained'}
                         color={'primary'}
                         fullWidth
                         component={'a'}
-                        href={downloadUrl}
+                        {...downloadProps}
                         target={'_blank'}
                         rel={'noopener'}
                         startIcon={<CloudDownload />}
@@ -243,7 +243,7 @@ const Rookie = ({
                         <FontAwesomeIcon icon={['fad', 'books']} />
                       </Link>
                     </Grid>
-                    {downloadUrl && (
+                    {downloadProps && (
                       <Grid
                         item
                         xs
@@ -254,7 +254,7 @@ const Rookie = ({
                       >
                         <IconButton
                           component={'a'}
-                          href={downloadUrl}
+                          {...downloadProps}
                           target={'_blank'}
                           rel={'noopener'}
                           color={'primary'}
