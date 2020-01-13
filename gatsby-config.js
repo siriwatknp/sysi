@@ -50,9 +50,13 @@ module.exports = {
     },
     `gatsby-plugin-material-ui`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-tagmanager',
       options: {
-        trackingId: `UA-155133279-1`,
+        id: 'GTM-NBKNFQX',
+
+        // Include GTM in development.
+        // Defaults to false meaning GTM will only be loaded in production.
+        // includeInDevelopment: true,
       },
     },
     {
@@ -69,6 +73,6 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
   ],
 };
