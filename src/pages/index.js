@@ -12,6 +12,8 @@ import SupportInfo from '../components/SupportInfo';
 import LevelInfo from '../components/LevelInfo';
 import Banner from '../components/Banner';
 import SEO from '../components/seo';
+import FixedImage from '../components/FixedImage';
+import FluidImage from '../components/FluidImage';
 import sysi_logo from '../images/sysi_logo.jpg';
 import influencer_logo from '../images/influencer_logo.jpg';
 import achieve_logo from '../images/a-chieve_logo.jpg';
@@ -82,7 +84,10 @@ const useStyles = makeStyles(({ breakpoints }) => ({
     margin: 0,
   },
   doodle: {
-    maxHeight: 200,
+    width: 184,
+    height: 184,
+    margin: 'auto',
+    marginBottom: '1.5em',
   },
 }));
 
@@ -90,7 +95,7 @@ const IndexPage = () => {
   const styles = useStyles();
   return (
     <>
-      <SEO />
+      <SEO title={'หน้าหลัก • Home'} />
       <Box
         color={'common.white'}
         bgcolor={'primary.main'}
@@ -291,28 +296,64 @@ const IndexPage = () => {
           <br />
           <Grid container spacing={4} justify={'center'}>
             <Grid item xs={6} sm={4}>
-              <img className={styles.doodle} alt={'doodle'} src={doodleA} />
-              <p>มีศักยภาพและความมุ่งมั่น</p>
+              <Box maxWidth={200} mx={'auto'}>
+                <FixedImage
+                  className={styles.doodle}
+                  alt={'doodle'}
+                  fileName={'doodle-A'}
+                />
+                <p>มีศักยภาพและความมุ่งมั่น</p>
+              </Box>
             </Grid>
             <Grid item xs={6} sm={4}>
-              <img className={styles.doodle} alt={'doodle'} src={doodleB} />
-              <p>พร้อมที่จะเรียนรู้ร่วมกับเพื่อนอย่างเข้มข้น</p>
+              <Box maxWidth={200} mx={'auto'}>
+                <FixedImage
+                  className={styles.doodle}
+                  alt={'doodle'}
+                  fileName={'doodle-B'}
+                />
+                <p>พร้อมที่จะเรียนรู้ร่วมกับเพื่อนอย่างเข้มข้น</p>
+              </Box>
             </Grid>
             <Grid item xs={6} sm={4}>
-              <img className={styles.doodle} alt={'doodle'} src={doodleC} />
-              <p>แก้ปัญหาตรงจุด และเป็นไปได้</p>
+              <Box maxWidth={200} mx={'auto'}>
+                <FixedImage
+                  className={styles.doodle}
+                  alt={'doodle'}
+                  fileName={'doodle-C'}
+                />
+                <p>แก้ปัญหาตรงจุด และเป็นไปได้</p>
+              </Box>
             </Grid>
             <Grid item xs={6} sm={4}>
-              <img className={styles.doodle} alt={'doodle'} src={doodleD} />
-              <p>สร้างสรรค์ คิดการใหญ่</p>
+              <Box maxWidth={200} mx={'auto'}>
+                <FixedImage
+                  className={styles.doodle}
+                  alt={'doodle'}
+                  fileName={'doodle-D'}
+                />
+                <p>สร้างสรรค์ คิดการใหญ่</p>
+              </Box>
             </Grid>
             <Grid item xs={6} sm={4}>
-              <img className={styles.doodle} alt={'doodle'} src={doodleE} />
-              <p>เห็นโอกาสเติบโต สร้างผลกระทบทางสังคมเพิ่ม</p>
+              <Box maxWidth={200} mx={'auto'}>
+                <FixedImage
+                  className={styles.doodle}
+                  alt={'doodle'}
+                  fileName={'doodle-E'}
+                />
+                <p>เห็นโอกาสเติบโต สร้างผลกระทบทางสังคมเพิ่ม</p>
+              </Box>
             </Grid>
             <Grid item xs={6} sm={4}>
-              <img className={styles.doodle} alt={'doodle'} src={doodleF} />
-              <p>เกิดผลยั่งยืน กับกลุ่มเป้าหมาย</p>
+              <Box maxWidth={200} mx={'auto'}>
+                <FixedImage
+                  className={styles.doodle}
+                  alt={'doodle'}
+                  fileName={'doodle-F'}
+                />
+                <p>เกิดผลยั่งยืน กับกลุ่มเป้าหมาย</p>
+              </Box>
             </Grid>
           </Grid>
         </Box>
@@ -374,8 +415,8 @@ const IndexPage = () => {
             <br />
             <h3>สนับสนุนโดย</h3>
             <br />
-            <Box maxWidth={240}>
-              <img className={styles.logo} src={sss_logo} alt={'sponsor'} />
+            <Box maxWidth={160}>
+              <FluidImage alt={'doodle'} fileName={'sss_logo'} />
             </Box>
             <br />
             <br />
