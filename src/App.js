@@ -141,6 +141,9 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
   sidebarLevel2: {
     paddingLeft: 32,
   },
+  hiddenText: {
+    fontSize: 0,
+  },
 }));
 
 const StylesProvider = ({ children }) => {
@@ -159,7 +162,10 @@ const App = ({ location, children }) => {
             <AppBar color={'default'} className={styles.header}>
               <Toolbar>
                 <Hidden smUp>
-                  <IconButton onClick={() => setOpened(false)}>
+                  <IconButton
+                    name={'sidebar toggle'}
+                    onClick={() => setOpened(true)}
+                  >
                     {opened ? <ArrowLeft /> : <MenuRounded />}
                   </IconButton>
                 </Hidden>
@@ -251,6 +257,7 @@ const App = ({ location, children }) => {
               </Toolbar>
             </AppBar>
             <Fab
+              name={'close sidebar'}
               className={cx(styles.fab, !opened && styles.fabHidden)}
               onClick={() => setOpened(false)}
             >
@@ -318,6 +325,9 @@ const App = ({ location, children }) => {
                   <Grid item xs={12} sm={6} md={4}>
                     <Box align={'center'} mt={1}>
                       <Button
+                        component={'a'}
+                        href={'mailto:sysi.thailand@gmail.com'}
+                        target={'_blank'}
                         className={styles.mail}
                         variant={'outlined'}
                         startIcon={<Mail />}
@@ -338,6 +348,9 @@ const App = ({ location, children }) => {
                         rel={'noopener'}
                         target={'_blank'}
                       >
+                        <span className={styles.hiddenText}>
+                          Our facebook page
+                        </span>
                         <FontAwesomeIcon icon={['fab', 'facebook']} />
                       </IconButton>
                       <IconButton
@@ -347,6 +360,9 @@ const App = ({ location, children }) => {
                         rel={'noopener'}
                         target={'_blank'}
                       >
+                        <span className={styles.hiddenText}>
+                          Our instagram account
+                        </span>
                         <FontAwesomeIcon icon={['fab', 'instagram']} />
                       </IconButton>
                       <IconButton
@@ -356,6 +372,9 @@ const App = ({ location, children }) => {
                         rel={'noopener'}
                         target={'_blank'}
                       >
+                        <span className={styles.hiddenText}>
+                          Our twitter account
+                        </span>
                         <FontAwesomeIcon icon={['fab', 'twitter']} />
                       </IconButton>
                       <IconButton
@@ -365,6 +384,9 @@ const App = ({ location, children }) => {
                         rel={'noopener'}
                         target={'_blank'}
                       >
+                        <span className={styles.hiddenText}>
+                          Our medium blog
+                        </span>
                         <FontAwesomeIcon icon={['fab', 'medium']} />
                       </IconButton>
                     </Box>
