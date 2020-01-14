@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import { Element } from 'react-scroll';
 import { makeStyles } from '@material-ui/core/styles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
@@ -14,12 +12,9 @@ import Banner from '../components/Banner';
 import SEO from '../components/seo';
 import FixedImage from '../components/FixedImage';
 import FluidImage from '../components/FluidImage';
-import sysi_logo from '../images/sysi_logo.jpg';
-import influencer_logo from '../images/influencer_logo.jpg';
-import achieve_logo from '../images/a-chieve_logo.jpg';
-import doplus_logo from '../images/doplus_logo.jpg';
-import newgeneration_logo from '../images/new-generation_logo.jpg';
 import thoughtworks_logo from '../images/thoughtworks_logo.jpg';
+
+import { supports, levels, doodles, logos } from '../data/home';
 
 const useStyles = makeStyles(({ breakpoints }) => ({
   title: {
@@ -83,7 +78,7 @@ const useStyles = makeStyles(({ breakpoints }) => ({
     marginBottom: '1.5em',
   },
   divider: {
-    maxWidth: 120,
+    maxWidth: 600,
   },
 }));
 
@@ -145,46 +140,11 @@ const IndexPage = () => {
             </Box>
           </h2>
           <Grid container spacing={3}>
-            <Grid item xs={12} sm={6}>
-              <SupportInfo
-                icon={<FontAwesomeIcon icon={['fad', 'hands-usd']} />}
-                title={'เงินทุน • FUNDING'}
-                content={
-                  <>
-                    เข้าถึงเงินทุนสําหรับสนับสนุนการทําโครงการไปจนถึงการก่อตั้งองค์กร
-                    ตั้งแต่ ระดับไม่เกิน 20,000 บาท ไม่เกิน 50,000 บาท
-                    และไม่เกิน 650,000 บาท
-                  </>
-                }
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <SupportInfo
-                icon={<FontAwesomeIcon icon={['fad', 'book-spells']} />}
-                title={'ทักษะ • TRAINING'}
-                content={
-                  'พัฒนาความรู้และทักษะที่จําเป็นต่อการพัฒนาตนเอง พัฒนาทีม และพัฒนาโครงการ ไม่ว่า จะเป็นวิธีคิด เครื่องมือ ความรู้ทางสังคม และการบริหารโครงการ'
-                }
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <SupportInfo
-                icon={<FontAwesomeIcon icon={['fad', 'monitor-heart-rate']} />}
-                title={'ติดตาม • MONITORING'}
-                content={
-                  'ลงพื้นที่ติดตามและให้คําปรึกษาแต่ละโครงการ สนับสนุนการเติบโตทั้งระดับบุคคล ระดับทีม และการสร้างผลกระทบของโครงการ'
-                }
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <SupportInfo
-                icon={<FontAwesomeIcon icon={['fad', 'chart-network']} />}
-                title={'เครือข่าย • NETWORK'}
-                content={
-                  'เส้นทางการสร้างการเปลี่ยนแปลงทางสังคม จะไปได้ยาว ถ้าไปด้วยกัน ที่นี่สนับสนุนการเรียนรู้ร่วมกันอย่างเข้มข้นระหว่างเพื่อนร่วมรุ่น'
-                }
-              />
-            </Grid>
+            {supports.map(support => (
+              <Grid key={support.title} item xs={12} sm={6}>
+                <SupportInfo {...support} />
+              </Grid>
+            ))}
           </Grid>
         </Box>
       </Container>
@@ -198,89 +158,11 @@ const IndexPage = () => {
                 </Box>
               </h2>
               <Grid container spacing={4} justify={'center'}>
-                <Grid item xs={12} sm={6} md={4}>
-                  <LevelInfo
-                    title={'ระดับเริ่มต้น • Rookie'}
-                    extra={'เปิดรับสมัครแล้ว ถึง 28 ก.พ. 63'}
-                    content={
-                      <>
-                        <h4 className={styles.content}>
-                          สําหรับผู้ที่มีไอเดียในการแก้ปัญหาสังคมที่ตนเองพบเจอ
-                          และอยากจะทดลองทําเพื่อแก้ปัญหานั้นให้ได้
-                        </h4>
-                        • อายุระหว่าง 15-25 ปี
-                        <br />
-                        • จํานวนสมาชิก 1-3 คน
-                        <br />
-                        • ระยะเวลาทําโครงการ 3-5 เดือน
-                        <br />• ทุนสนับสุนน ไม่เกิน 20,000 บาท
-                      </>
-                    }
-                    actions={[
-                      {
-                        id: 'download-app-form-rookie',
-                        label: 'โหลดใบสมัคร',
-                        variant: 'contained',
-                        color: 'primary',
-                        component: 'a',
-                        href:
-                          'https://drive.google.com/file/d/1-BvfvmxaeoRKt4_WMYRAz9ObeTl6O14B/view?usp=sharing',
-                        target: '_blank',
-                        rel: 'noopener',
-                      },
-                      {
-                        label: 'อ่านรายละเอียด',
-                        variant: 'contained',
-                        component: Link,
-                        to: '/courses/rookie',
-                      },
-                    ]}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                  <LevelInfo
-                    title={'ระดับกลาง • Semi-Pro'}
-                    content={
-                      <>
-                        <h4 className={styles.content}>
-                          สําหรับกลุ่มที่ต้องการขยับขยายให้สิ่งที่ทําสร้างผลกระทบทางสังคมมากขึ้น
-                          จริงจังมากขึ้น
-                        </h4>
-                        • อายุระหว่าง 15-27 ปี
-                        <br />
-                        • จํานวนสมาชิก 2-5 คน
-                        <br />
-                        • ระยะเวลาทําโครงการ 3-6 เดือน
-                        <br />• ทุนสนับสุนน ไม่เกิน 50,000 บาท
-                      </>
-                    }
-                    actions={[
-                      { label: 'อ่านรายละเอียด', variant: 'contained' },
-                    ]}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                  <LevelInfo
-                    title={'ระดับใกล้โปร • Turn-Pro'}
-                    content={
-                      <>
-                        <h4 className={styles.content}>
-                          สําหรับกลุ่มที่ต้องการจริงจังกับการแก้ปัญหาในประเด็นที่ทําและต้องการการสนับสนุน
-                          เพื่่อสร้างองค์กรของตนเองสําหรับทํางานต่อในระยะยาว
-                        </h4>
-                        • อายุระหว่าง 20-30 ปี
-                        <br />
-                        • จํานวนสมาชิก 3-5 คน
-                        <br />
-                        • ระยะเวลาทําโครงการ 10-12 เดือน
-                        <br />• ทุนสนับสุนน ไม่เกิน 650,000 บาท
-                      </>
-                    }
-                    actions={[
-                      { label: 'อ่านรายละเอียด', variant: 'contained' },
-                    ]}
-                  />
-                </Grid>
+                {levels.map((getLevel, i) => (
+                  <Grid key={i} item xs={12} sm={6} md={4}>
+                    <LevelInfo {...getLevel(styles)} />
+                  </Grid>
+                ))}
               </Grid>
             </Box>
           </Container>
@@ -291,131 +173,54 @@ const IndexPage = () => {
           <h3>ลักษณะผู้เข้าร่วมและโครงการที่เราค้นหา</h3>
           <br />
           <Grid container spacing={4} justify={'center'}>
-            <Grid item xs={6} sm={4}>
-              <Box maxWidth={200} mx={'auto'}>
-                <FixedImage
-                  className={styles.doodle}
-                  alt={'doodle'}
-                  fileName={'doodle-A'}
-                />
-                <p>มีศักยภาพและความมุ่งมั่น</p>
-              </Box>
-            </Grid>
-            <Grid item xs={6} sm={4}>
-              <Box maxWidth={200} mx={'auto'}>
-                <FixedImage
-                  className={styles.doodle}
-                  alt={'doodle'}
-                  fileName={'doodle-B'}
-                />
-                <p>พร้อมที่จะเรียนรู้ร่วมกับเพื่อนอย่างเข้มข้น</p>
-              </Box>
-            </Grid>
-            <Grid item xs={6} sm={4}>
-              <Box maxWidth={200} mx={'auto'}>
-                <FixedImage
-                  className={styles.doodle}
-                  alt={'doodle'}
-                  fileName={'doodle-C'}
-                />
-                <p>แก้ปัญหาตรงจุด และเป็นไปได้</p>
-              </Box>
-            </Grid>
-            <Grid item xs={6} sm={4}>
-              <Box maxWidth={200} mx={'auto'}>
-                <FixedImage
-                  className={styles.doodle}
-                  alt={'doodle'}
-                  fileName={'doodle-D'}
-                />
-                <p>สร้างสรรค์ คิดการใหญ่</p>
-              </Box>
-            </Grid>
-            <Grid item xs={6} sm={4}>
-              <Box maxWidth={200} mx={'auto'}>
-                <FixedImage
-                  className={styles.doodle}
-                  alt={'doodle'}
-                  fileName={'doodle-E'}
-                />
-                <p>เห็นโอกาสเติบโต สร้างผลกระทบทางสังคมเพิ่ม</p>
-              </Box>
-            </Grid>
-            <Grid item xs={6} sm={4}>
-              <Box maxWidth={200} mx={'auto'}>
-                <FixedImage
-                  className={styles.doodle}
-                  alt={'doodle'}
-                  fileName={'doodle-F'}
-                />
-                <p>เกิดผลยั่งยืน กับกลุ่มเป้าหมาย</p>
-              </Box>
-            </Grid>
+            {doodles.map(doodle => (
+              <Grid key={doodle.fileName} item xs={6} sm={4}>
+                <Box maxWidth={200} mx={'auto'}>
+                  <FixedImage
+                    className={styles.doodle}
+                    alt={doodle.alt}
+                    fileName={doodle.fileName}
+                  />
+                  <p>{doodle.label}</p>
+                </Box>
+              </Grid>
+            ))}
           </Grid>
         </Box>
       </Container>
       <Divider light />
       <Container>
-        <Box py={{ xs: 2, sm: 4, md: 6 }}>
+        <Box py={{ xs: 5, md: 6 }}>
           <Box align={'center'}>
             <h3>ทีมงาน</h3>
-            <br />
             <Box mb={5}>
               <Grid container spacing={4} justify={'center'}>
-                <Grid item>
-                  <img
-                    className={styles.logo}
-                    alt={'sysi logo'}
-                    src={sysi_logo}
-                  />
-                </Grid>
-                <Grid item>
-                  <img
-                    className={styles.logo}
-                    alt={'influencer logo'}
-                    src={influencer_logo}
-                  />
-                </Grid>
-                <Grid item>
-                  <img
-                    className={styles.logo}
-                    alt={'achieve logo'}
-                    src={achieve_logo}
-                  />
-                </Grid>
-                <Grid item>
-                  <img
-                    className={styles.logo}
-                    alt={'doplus logo'}
-                    src={doplus_logo}
-                  />
-                </Grid>
-                <Grid item>
-                  <img
-                    className={styles.logo}
-                    alt={'new generation logo'}
-                    src={newgeneration_logo}
-                  />
-                </Grid>
+                {logos.map(logo => (
+                  <Grid key={logo.alt} item>
+                    <img className={styles.logo} {...logo} />
+                  </Grid>
+                ))}
               </Grid>
             </Box>
             <Divider className={styles.divider} light />
             <br />
-            <h3>พันธมิตร</h3>
-            <img
-              className={styles.logo}
-              alt={'new generation logo'}
-              src={thoughtworks_logo}
-            />
             <br />
-            <br />
-            <Divider className={styles.divider} light />
-            <br />
-            <h3>สนับสนุนโดย</h3>
-            <br />
-            <Box maxWidth={160}>
-              <FluidImage alt={'doodle'} fileName={'sss_logo'} />
-            </Box>
+            <Grid container spacing={4} justify={'center'}>
+              <Grid item xs={12} sm={6} md={3}>
+                <h3>พันธมิตร</h3>
+                <img
+                  style={{ maxHeight: 160, marginTop: -16 }}
+                  alt={'new generation logo'}
+                  src={thoughtworks_logo}
+                />
+              </Grid>
+              <Grid item xs={12} sm={6} md={3}>
+                <h3>สนับสนุนโดย</h3>
+                <Box maxWidth={160} mt={3}>
+                  <FluidImage alt={'สสส'} fileName={'sss_logo'} />
+                </Box>
+              </Grid>
+            </Grid>
             <br />
             <br />
           </Box>

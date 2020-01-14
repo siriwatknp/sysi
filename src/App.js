@@ -27,6 +27,7 @@ import KeyboardArrowLeftRounded from '@material-ui/icons/KeyboardArrowLeftRounde
 import Mail from '@material-ui/icons/Mail';
 import theme from './theme';
 import logo from './images/sysi_logo.jpg';
+import { levels, menus, socials } from './data/app';
 import './fontawesome';
 
 const useStyles = makeStyles(({ palette, breakpoints }) => ({
@@ -114,11 +115,15 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
   },
   navLink: {
     color: palette.grey[700],
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: 16,
+    paddingRight: 16,
     borderRadius: 40,
     '& .MuiButton-label': {
       fontWeight: 'normal',
+    },
+    [breakpoints.up('md')]: {
+      paddingLeft: 20,
+      paddingRight: 20,
     },
   },
   activeNavLink: {
@@ -126,9 +131,14 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
   },
   register: {
     borderRadius: 40,
-    marginLeft: 32,
-    paddingLeft: 32,
-    paddingRight: 32,
+    marginLeft: 8,
+    paddingLeft: 16,
+    paddingRight: 16,
+    [breakpoints.up('md')]: {
+      marginLeft: 16,
+      paddingLeft: 32,
+      paddingRight: 32,
+    },
   },
   popoverPaper: {
     position: 'absolute',
@@ -195,50 +205,32 @@ const App = ({ location, children }) => {
                           className={cx(styles.popoverPaper)}
                         >
                           <List component={'div'}>
-                            <ListItem
-                              button
-                              activeClassName={styles.activeNavLink}
-                              component={Link}
-                              to={'/courses/rookie'}
-                            >
-                              ระดับเริ่มต้น • Rookie
-                            </ListItem>
-                            <ListItem
-                              button
-                              activeClassName={styles.activeNavLink}
-                              component={Link}
-                              to={'/courses/semi-pro'}
-                            >
-                              ระดับกลาง • Semi-Pro
-                            </ListItem>
-                            <ListItem
-                              button
-                              activeClassName={styles.activeNavLink}
-                              component={Link}
-                              to={'/courses/turn-pro'}
-                            >
-                              ระดับใกล้โปร • Turn-Pro
-                            </ListItem>
+                            {levels.map(lvl => (
+                              <ListItem
+                                key={lvl.label}
+                                button
+                                activeClassName={styles.activeNavLink}
+                                component={Link}
+                                to={lvl.to}
+                              >
+                                {lvl.label}
+                              </ListItem>
+                            ))}
                           </List>
                         </Paper>
                       </Grow>
                     </Button>
-                    <Button
-                      className={styles.navLink}
-                      activeClassName={styles.activeNavLink}
-                      component={Link}
-                      to={'/about-us'}
-                    >
-                      เกี่ยวกับเรา
-                    </Button>
-                    <Button
-                      className={styles.navLink}
-                      activeClassName={styles.activeNavLink}
-                      component={Link}
-                      to={'/FAQ'}
-                    >
-                      ถาม-ตอบ
-                    </Button>
+                    {menus.map(menu => (
+                      <Button
+                        key={menu.label}
+                        className={styles.navLink}
+                        activeClassName={styles.activeNavLink}
+                        component={Link}
+                        to={menu.to}
+                      >
+                        {menu.label}
+                      </Button>
+                    ))}
                   </Hidden>
                   {location.pathname === '/' && (
                     <Button
@@ -266,54 +258,35 @@ const App = ({ location, children }) => {
             </Fab>
             <Drawer
               open={opened}
+              onClose={() => setOpened(false)}
               PaperProps={{ className: styles.sidebarPaper }}
             >
               <List>
                 <List subheader={<ListSubheader>โปรแกรม</ListSubheader>}>
-                  <ListItem
-                    className={styles.sidebarLevel2}
-                    button
-                    onClick={() => setOpened(false)}
-                    component={Link}
-                    to={'/courses/rookie'}
-                  >
-                    เริ่มต้น • Rookie
-                  </ListItem>
-                  <ListItem
-                    className={styles.sidebarLevel2}
-                    button
-                    onClick={() => setOpened(false)}
-                    component={Link}
-                    to={'/courses/semi-pro'}
-                  >
-                    กลาง • Semi-Pro
-                  </ListItem>
-                  <ListItem
-                    className={styles.sidebarLevel2}
-                    button
-                    onClick={() => setOpened(false)}
-                    component={Link}
-                    to={'/courses/turn-pro'}
-                  >
-                    ใกล้โปร • Turn-Pro
-                  </ListItem>
+                  {levels.map(lvl => (
+                    <ListItem
+                      key={lvl.label}
+                      className={styles.sidebarLevel2}
+                      button
+                      onClick={() => setOpened(false)}
+                      component={Link}
+                      to={lvl.to}
+                    >
+                      {lvl.label}
+                    </ListItem>
+                  ))}
                 </List>
-                <ListItem
-                  button
-                  component={Link}
-                  to={'/about-us'}
-                  onClick={() => setOpened(false)}
-                >
-                  เกี่ยวกับเรา
-                </ListItem>
-                <ListItem
-                  button
-                  component={Link}
-                  to={'/FAQ'}
-                  onClick={() => setOpened(false)}
-                >
-                  คำถามที่พบบ่อย
-                </ListItem>
+                {menus.map(menu => (
+                  <ListItem
+                    key={menu.label}
+                    button
+                    component={Link}
+                    to={menu.to}
+                    onClick={() => setOpened(false)}
+                  >
+                    {menu.label}
+                  </ListItem>
+                ))}
               </List>
             </Drawer>
             <main>
@@ -342,76 +315,42 @@ const App = ({ location, children }) => {
                       ml={{ sm: -2, md: 0 }}
                       className={styles.socialWrapper}
                     >
-                      <IconButton
-                        className={styles.social}
-                        component={'a'}
-                        href={'https://www.facebook.com/sysi.thailand'}
-                        rel={'noopener'}
-                        target={'_blank'}
-                      >
-                        <span className={styles.hiddenText}>
-                          Our facebook page
-                        </span>
-                        <FontAwesomeIcon icon={['fab', 'facebook']} />
-                      </IconButton>
-                      <IconButton
-                        className={styles.social}
-                        component={'a'}
-                        href={'https://www.instagram.com/sysi.thailand'}
-                        rel={'noopener'}
-                        target={'_blank'}
-                      >
-                        <span className={styles.hiddenText}>
-                          Our instagram account
-                        </span>
-                        <FontAwesomeIcon icon={['fab', 'instagram']} />
-                      </IconButton>
-                      <IconButton
-                        className={styles.social}
-                        component={'a'}
-                        href={'https://twitter.com/sysithailand'}
-                        rel={'noopener'}
-                        target={'_blank'}
-                      >
-                        <span className={styles.hiddenText}>
-                          Our twitter account
-                        </span>
-                        <FontAwesomeIcon icon={['fab', 'twitter']} />
-                      </IconButton>
-                      <IconButton
-                        className={styles.social}
-                        component={'a'}
-                        href={'https://medium.com/sysi'}
-                        rel={'noopener'}
-                        target={'_blank'}
-                      >
-                        <span className={styles.hiddenText}>
-                          Our medium blog
-                        </span>
-                        <FontAwesomeIcon icon={['fab', 'medium']} />
-                      </IconButton>
+                      {socials.map(social => (
+                        <IconButton
+                          key={social.label}
+                          className={styles.social}
+                          component={'a'}
+                          href={social.href}
+                          rel={'noopener'}
+                          target={'_blank'}
+                        >
+                          <span className={styles.hiddenText}>
+                            {social.label}
+                          </span>
+                          <FontAwesomeIcon icon={social.icon} />
+                        </IconButton>
+                      ))}
                     </Box>
                   </Grid>
                   <Grid item xs={6} sm={5} md={2}>
                     <h5 className={styles.categoryHeading}>ทั่วไป</h5>
-                    <Link className={styles.link} to={'/about-us'}>
-                      เกี่ยวกับเรา
-                    </Link>
-                    <Link className={styles.link} to={'/FAQ'}>
-                      คำถามที่พบบ่อย
-                    </Link>
+                    {menus.map(menu => (
+                      <Link
+                        key={menu.label}
+                        className={styles.link}
+                        to={menu.to}
+                      >
+                        {menu.label}
+                      </Link>
+                    ))}
                   </Grid>
                   <Grid item xs={6} sm={5} md={2}>
                     <h5 className={styles.categoryHeading}>โปรแกรม</h5>
-                    <Link className={styles.link} to={'/courses/rookie'}>
-                      เริ่มต้น • Rookie
-                    </Link>
-                    <Link className={styles.link} to={'/courses/semi-pro'}>
-                      กลาง • Semi-Pro
-                    </Link>
-                    <Link className={styles.link} to={'/courses/turn-pro'}>
-                      ใกล้โปร • Turn-Pro
-                    </Link>
+                    {levels.map(lvl => (
+                      <Link className={styles.link} to={lvl.to}>
+                        {lvl.label}
+                      </Link>
+                    ))}
                   </Grid>
                 </Grid>
               </Box>
