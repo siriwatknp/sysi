@@ -13,8 +13,9 @@ import ListItem from '@material-ui/core/ListItem';
 import CloudDownload from '@material-ui/icons/CloudDownload';
 import { lightBlue } from '@material-ui/core/colors';
 import EventItem from '../components/EventItem';
+import LevelBannerImage from '../components/LevelBannerImage';
 
-const useStyles = makeStyles(({ palette }) => ({
+const useStyles = makeStyles(({ palette, breakpoints }) => ({
   listItem: {
     borderRadius: 4,
     marginLeft: 16,
@@ -22,9 +23,15 @@ const useStyles = makeStyles(({ palette }) => ({
       fontWeight: 'bold',
     },
   },
+  banner: {
+    margin: '0 -16px',
+    [breakpoints.up('sm')]: {
+      margin: 0,
+    },
+  },
   activeListItem: {
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 17,
   },
   elmLinkMobile: {
     fontSize: 24,
@@ -71,6 +78,7 @@ const useGridStyles = makeStyles(({ palette }) => ({
 
 const Rookie = ({
   title,
+  bannerName,
   description,
   condition,
   timeline,
@@ -79,6 +87,63 @@ const Rookie = ({
 }) => {
   const styles = useStyles();
   const gridStyles = useGridStyles();
+  const toc = [
+    {
+      to: 'about',
+      label: 'เกี่ยวกับ',
+      icon: ['fad', 'info-circle'],
+      content: (
+        <Box pt={{ xs: 3, sm: 5, md: 8 }}>
+          <h1>{title}</h1>
+          <LevelBannerImage className={styles.banner} fileName={bannerName} />
+          <br />
+          <p>{description}</p>
+        </Box>
+      ),
+    },
+    {
+      to: 'condition',
+      label: 'เงื่อนไข',
+      icon: ['fad', 'clipboard-list-check'],
+      content: (
+        <>
+          <Box mb={1}>
+            <b>เงื่อนไข</b>
+          </Box>
+          {condition}
+        </>
+      ),
+    },
+    {
+      to: 'schedule',
+      label: 'กำหนดการ',
+      icon: ['fad', 'calendar-alt'],
+      content: (
+        <>
+          <Box mb={1}>
+            <b>กำหนดการ</b>
+          </Box>
+          {timeline.map((event, i) => (
+            <EventItem key={i} {...event} />
+          ))}
+          <br />
+        </>
+      ),
+    },
+    {
+      to: 'course',
+      label: 'เนื้อหา',
+      icon: ['fad', 'books'],
+      content: (
+        <>
+          <Box mb={1}>
+            <b>เนื้อหาในหลักสูตร</b>
+          </Box>
+          {material}
+        </>
+      ),
+    },
+  ];
   return (
     <Box bgcolor={'grey.50'}>
       <Container>
@@ -86,86 +151,31 @@ const Rookie = ({
           <Grid container justify={'space-between'}>
             <Grid item md={1} />
             <Grid item xs={12} sm={8} md={7}>
-              <Element name={'about'}>
-                <Box pt={{ xs: 3, sm: 5, md: 8 }}>
-                  <h1>{title}</h1>
-                  <p>{description}</p>
-                </Box>
-              </Element>
-              <Element name={'condition'}>
-                <Box mb={1}>
-                  <b>เงื่อนไข</b>
-                </Box>
-                {condition}
-              </Element>
-              <Element name={'schedule'}>
-                <Box mb={1}>
-                  <b>กำหนดการ</b>
-                </Box>
-                {timeline.map((event, i) => (
-                  <EventItem key={i} {...event} />
-                ))}
-                <br />
-              </Element>
-              <Element name={'course'}>
-                <Box mb={1}>
-                  <b>เนื้อหาในหลักสูตร</b>
-                </Box>
-                {material}
-              </Element>
+              {toc.map(item => (
+                <Element key={item.label} name={item.to}>
+                  {item.content}
+                </Element>
+              ))}
             </Grid>
             <Hidden only={'xs'}>
               <Grid item xs={12} sm={3} md={3}>
                 <Box position={'sticky'} top={96} mt={{ sm: 8, md: 12 }}>
                   <Box borderLeft={'1px solid'} borderColor={'grey.100'}>
-                    <Link
-                      activeClass={styles.activeListItem}
-                      to={'about'}
-                      smooth
-                      spy
-                      offset={-96}
-                      duration={800}
-                    >
-                      <ListItem className={styles.listItem} button>
-                        เกี่ยวกับ
-                      </ListItem>
-                    </Link>
-                    <Link
-                      activeClass={styles.activeListItem}
-                      to={'condition'}
-                      smooth
-                      spy
-                      offset={-96}
-                      duration={800}
-                    >
-                      <ListItem className={styles.listItem} button>
-                        เงื่อนไข
-                      </ListItem>
-                    </Link>
-                    <Link
-                      activeClass={styles.activeListItem}
-                      to={'schedule'}
-                      smooth
-                      spy
-                      offset={-96}
-                      duration={800}
-                    >
-                      <ListItem className={styles.listItem} button>
-                        กำหนดการ
-                      </ListItem>
-                    </Link>
-                    <Link
-                      activeClass={styles.activeListItem}
-                      to={'course'}
-                      smooth
-                      spy
-                      offset={-96}
-                      duration={800}
-                    >
-                      <ListItem className={styles.listItem} button>
-                        เนื้อหา
-                      </ListItem>
-                    </Link>
+                    {toc.map(item => (
+                      <Link
+                        key={item.label}
+                        activeClass={styles.activeListItem}
+                        to={item.to}
+                        smooth
+                        spy
+                        offset={-96}
+                        duration={800}
+                      >
+                        <ListItem className={styles.listItem} button>
+                          {item.label}
+                        </ListItem>
+                      </Link>
+                    ))}
                   </Box>
                   {downloadProps && (
                     <Box mt={3} maxWidth={200}>
@@ -197,64 +207,22 @@ const Rookie = ({
               >
                 <Paper elevation={8}>
                   <Grid container>
-                    <Grid item xs classes={gridStyles}>
-                      <Link
-                        className={styles.elmLinkMobile}
-                        activeClass={styles.elmLinkMobileActive}
-                        to={'about'}
-                        smooth
-                        spy
-                        offset={-96}
-                        duration={800}
-                      >
-                        <FontAwesomeIcon icon={['fad', 'info-circle']} />
-                        <span className={styles.iconLabel}>เกี่ยวกับ</span>
-                      </Link>
-                    </Grid>
-                    <Grid item xs classes={gridStyles}>
-                      <Link
-                        className={styles.elmLinkMobile}
-                        activeClass={styles.elmLinkMobileActive}
-                        to={'condition'}
-                        smooth
-                        spy
-                        offset={-96}
-                        duration={800}
-                      >
-                        <FontAwesomeIcon
-                          icon={['fad', 'clipboard-list-check']}
-                        />
-                        <span className={styles.iconLabel}>เงื่อนไข</span>
-                      </Link>
-                    </Grid>
-                    <Grid item xs classes={gridStyles}>
-                      <Link
-                        className={styles.elmLinkMobile}
-                        activeClass={styles.elmLinkMobileActive}
-                        to={'schedule'}
-                        smooth
-                        spy
-                        offset={-96}
-                        duration={800}
-                      >
-                        <FontAwesomeIcon icon={['fad', 'calendar-alt']} />
-                        <span className={styles.iconLabel}>กำหนดการ</span>
-                      </Link>
-                    </Grid>
-                    <Grid item xs classes={gridStyles}>
-                      <Link
-                        className={styles.elmLinkMobile}
-                        activeClass={styles.elmLinkMobileActive}
-                        to={'course'}
-                        smooth
-                        spy
-                        offset={-96}
-                        duration={800}
-                      >
-                        <FontAwesomeIcon icon={['fad', 'books']} />
-                        <span className={styles.iconLabel}>เนื้อหา</span>
-                      </Link>
-                    </Grid>
+                    {toc.map(item => (
+                      <Grid item xs classes={gridStyles}>
+                        <Link
+                          className={styles.elmLinkMobile}
+                          activeClass={styles.elmLinkMobileActive}
+                          to={item.to}
+                          smooth
+                          spy
+                          offset={-96}
+                          duration={800}
+                        >
+                          <FontAwesomeIcon icon={item.icon} />
+                          <span className={styles.iconLabel}>{item.label}</span>
+                        </Link>
+                      </Grid>
+                    ))}
                     {downloadProps && (
                       <Grid
                         item

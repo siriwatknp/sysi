@@ -12,6 +12,7 @@ const Rookie = () => (
     />
     <Course
       title={'ระดับเริ่มต้น • Rookie'}
+      bannerName={'Header_Rookie'}
       downloadProps={{
         href:
           'https://drive.google.com/file/d/1-BvfvmxaeoRKt4_WMYRAz9ObeTl6O14B/view?usp=sharing',
@@ -75,7 +76,9 @@ const Rookie = () => (
       ]}
       material={
         <>
-          <p>เนื้อหาที่เรียนรู้ร่วมกัน</p>
+          <p>
+            <u>เนื้อหาที่เรียนรู้ร่วมกัน</u>
+          </p>
           <ul>
             <li>
               เปิดโลกทัศน์จากการเรียนรู้ร่วมกับเพื่อน การดูงาน และกรณีศึกษา
@@ -105,7 +108,9 @@ const Rookie = () => (
               Social Innovators)
             </li>
           </ul>
-          <p>เนื้อหาที่เลือกเรียนตามความสนใจ</p>
+          <p>
+            <u>เนื้อหาที่เลือกเรียนตามความสนใจ</u>
+          </p>
           <ul>
             <li>วิธีจัดการความขัดแย้ง (Conflict Management)</li>
             <li>

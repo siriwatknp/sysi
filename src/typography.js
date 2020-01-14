@@ -30,6 +30,9 @@ const typography = new Typography({
     'ul > li, ol > li': {
       marginBottom: 0,
     },
+    'p + ul, p + ol': {
+      marginTop: '-16px',
+    },
     'h1, h2': {
       letterSpacing: '1px',
     },
