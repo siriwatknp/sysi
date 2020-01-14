@@ -20,7 +20,7 @@ const useStyles = makeStyles(({ palette }) => ({
     textAlign: 'center',
   },
   extra: {
-    color: '#fff',
+    color: palette.grey[900],
     fontWeight: 400,
     textAlign: 'center',
     letterSpacing: 1,

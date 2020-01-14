@@ -154,6 +154,8 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
   },
   hiddenText: {
     fontSize: 0,
+    width: 0,
+    opacity: 0,
   },
 }));
 
@@ -173,10 +175,10 @@ const App = ({ location, children }) => {
             <AppBar color={'default'} className={styles.header}>
               <Toolbar>
                 <Hidden smUp>
-                  <IconButton
-                    name={'sidebar toggle'}
-                    onClick={() => setOpened(true)}
-                  >
+                  <IconButton edge={'start'} onClick={() => setOpened(true)}>
+                    <span className={styles.hiddenText} aria-hidden={true}>
+                      sidebar toggle
+                    </span>
                     {opened ? <ArrowLeft /> : <MenuRounded />}
                   </IconButton>
                 </Hidden>
@@ -324,7 +326,10 @@ const App = ({ location, children }) => {
                           rel={'noopener'}
                           target={'_blank'}
                         >
-                          <span className={styles.hiddenText}>
+                          <span
+                            className={styles.hiddenText}
+                            aria-hidden={true}
+                          >
                             {social.label}
                           </span>
                           <FontAwesomeIcon icon={social.icon} />

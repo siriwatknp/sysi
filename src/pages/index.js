@@ -197,7 +197,7 @@ const IndexPage = () => {
               <Grid container spacing={4} justify={'center'}>
                 {logos.map(logo => (
                   <Grid key={logo.alt} item>
-                    <img className={styles.logo} {...logo} />
+                    <img className={styles.logo} alt={logo.alt} {...logo} />
                   </Grid>
                 ))}
               </Grid>
