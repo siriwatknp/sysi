@@ -49,7 +49,7 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
   iconLabel: {
     fontSize: 10,
     marginTop: 4,
-    color: palette.grey[500],
+    color: palette.grey[600],
   },
   download: {
     color: palette.primary.main,

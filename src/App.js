@@ -175,7 +175,11 @@ const App = ({ location, children }) => {
             <AppBar color={'default'} className={styles.header}>
               <Toolbar>
                 <Hidden smUp>
-                  <IconButton edge={'start'} onClick={() => setOpened(true)}>
+                  <IconButton
+                    aria-label="sidebar toggle"
+                    edge={'start'}
+                    onClick={() => setOpened(true)}
+                  >
                     <span className={styles.hiddenText} aria-hidden={true}>
                       sidebar toggle
                     </span>
@@ -252,7 +256,7 @@ const App = ({ location, children }) => {
               </Toolbar>
             </AppBar>
             <Fab
-              name={'close sidebar'}
+              aria-label="close sidebar"
               className={cx(styles.fab, !opened && styles.fabHidden)}
               onClick={() => setOpened(false)}
             >
@@ -320,6 +324,7 @@ const App = ({ location, children }) => {
                       {socials.map(social => (
                         <IconButton
                           key={social.label}
+                          aria-label={social.label}
                           className={styles.social}
                           component={'a'}
                           href={social.href}
