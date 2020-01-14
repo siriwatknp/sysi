@@ -1,11 +1,11 @@
 import React from 'react';
+import cx from 'clsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Element, Link } from 'react-scroll';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
-import IconButton from '@material-ui/core/IconButton';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Hidden from '@material-ui/core/Hidden';
@@ -27,9 +27,10 @@ const useStyles = makeStyles(({ palette }) => ({
     fontSize: 18,
   },
   elmLinkMobile: {
-    fontSize: 28,
-    minHeight: 56,
+    fontSize: 24,
+    minHeight: 60,
     display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
     color: palette.grey[500],
@@ -38,8 +39,14 @@ const useStyles = makeStyles(({ palette }) => ({
     fontWeight: 'bold',
     color: lightBlue[900],
   },
+  iconLabel: {
+    fontSize: 10,
+    marginTop: 4,
+    color: palette.grey[500],
+  },
   download: {
-    margin: 'auto',
+    color: palette.primary.main,
+    textDecoration: 'none',
   },
 }));
 
@@ -156,7 +163,7 @@ const Rookie = ({
                       duration={800}
                     >
                       <ListItem className={styles.listItem} button>
-                        หลักสูตร
+                        เนื้อหา
                       </ListItem>
                     </Link>
                   </Box>
@@ -182,6 +189,7 @@ const Rookie = ({
             <Hidden smUp>
               <Box
                 position={'fixed'}
+                zIndex={1000}
                 left={0}
                 right={0}
                 bottom={0}
@@ -200,6 +208,7 @@ const Rookie = ({
                         duration={800}
                       >
                         <FontAwesomeIcon icon={['fad', 'info-circle']} />
+                        <span className={styles.iconLabel}>เกี่ยวกับ</span>
                       </Link>
                     </Grid>
                     <Grid item xs classes={gridStyles}>
@@ -215,6 +224,7 @@ const Rookie = ({
                         <FontAwesomeIcon
                           icon={['fad', 'clipboard-list-check']}
                         />
+                        <span className={styles.iconLabel}>เงื่อนไข</span>
                       </Link>
                     </Grid>
                     <Grid item xs classes={gridStyles}>
@@ -228,6 +238,7 @@ const Rookie = ({
                         duration={800}
                       >
                         <FontAwesomeIcon icon={['fad', 'calendar-alt']} />
+                        <span className={styles.iconLabel}>กำหนดการ</span>
                       </Link>
                     </Grid>
                     <Grid item xs classes={gridStyles}>
@@ -241,6 +252,7 @@ const Rookie = ({
                         duration={800}
                       >
                         <FontAwesomeIcon icon={['fad', 'books']} />
+                        <span className={styles.iconLabel}>เนื้อหา</span>
                       </Link>
                     </Grid>
                     {downloadProps && (
@@ -252,16 +264,15 @@ const Rookie = ({
                         alignItems={'center'}
                         justify={'center'}
                       >
-                        <IconButton
-                          component={'a'}
+                        <a
                           {...downloadProps}
                           target={'_blank'}
                           rel={'noopener'}
-                          color={'primary'}
-                          className={styles.download}
+                          className={cx(styles.elmLinkMobile, styles.download)}
                         >
                           <CloudDownload />
-                        </IconButton>
+                          <span className={styles.iconLabel}>โหลดใบสมัคร</span>
+                        </a>
                       </Grid>
                     )}
                   </Grid>

@@ -19,14 +19,7 @@ import influencer_logo from '../images/influencer_logo.jpg';
 import achieve_logo from '../images/a-chieve_logo.jpg';
 import doplus_logo from '../images/doplus_logo.jpg';
 import newgeneration_logo from '../images/new-generation_logo.jpg';
-import sss_logo from '../images/sss_logo.jpg';
 import thoughtworks_logo from '../images/thoughtworks_logo.jpg';
-import doodleA from '../images/doodle-A.png';
-import doodleB from '../images/doodle-B.png';
-import doodleC from '../images/doodle-C.png';
-import doodleD from '../images/doodle-D.png';
-import doodleE from '../images/doodle-E.png';
-import doodleF from '../images/doodle-F.png';
 
 const useStyles = makeStyles(({ breakpoints }) => ({
   title: {
@@ -88,6 +81,9 @@ const useStyles = makeStyles(({ breakpoints }) => ({
     height: 184,
     margin: 'auto',
     marginBottom: '1.5em',
+  },
+  divider: {
+    maxWidth: 120,
   },
 }));
 
@@ -401,17 +397,19 @@ const IndexPage = () => {
                     src={newgeneration_logo}
                   />
                 </Grid>
-                <Grid item>
-                  <img
-                    className={styles.logo}
-                    alt={'new generation logo'}
-                    src={thoughtworks_logo}
-                  />
-                </Grid>
               </Grid>
             </Box>
-            <Divider light />
+            <Divider className={styles.divider} light />
             <br />
+            <h3>พันธมิตร</h3>
+            <img
+              className={styles.logo}
+              alt={'new generation logo'}
+              src={thoughtworks_logo}
+            />
+            <br />
+            <br />
+            <Divider className={styles.divider} light />
             <br />
             <h3>สนับสนุนโดย</h3>
             <br />

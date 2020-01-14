@@ -32,7 +32,7 @@ import './fontawesome';
 const useStyles = makeStyles(({ palette, breakpoints }) => ({
   fab: {
     position: 'fixed',
-    zIndex: 1300,
+    zIndex: 1500,
     top: 28,
     left: 300,
     transform: 'translateX(-50%) scale(1)',
@@ -49,6 +49,7 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
   },
   sidebarPaper: {
     border: 'none',
+    width: 300,
   },
   footer: {
     color: '#fff',
