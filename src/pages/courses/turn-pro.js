@@ -58,7 +58,7 @@ const TurnPro = () => (
           description: '4 วัน 3 คืน',
         },
         {
-          startDate: { day: 4, month: 'ก.ย. 64' },
+          startDate: { day: 4, month: 'ก.ย. 63' },
           endDate: { day: 6 },
           title: 'Workshop ติดอาวุธ - 1',
           description: '3 วัน 2 คืน',
@@ -74,7 +74,7 @@ const TurnPro = () => (
           description: '3 วัน 2 คืน',
         },
         {
-          startDate: { day: 5, month: 'มี.ค. 63' },
+          startDate: { day: 5, month: 'มี.ค. 64' },
           endDate: { day: 7 },
           title: 'Workshop ติดอาวุธ - 3',
           description: '3 วัน 2 คืน',
@@ -95,19 +95,16 @@ const TurnPro = () => (
               เปิดโลกทัศน์จากการเรียนรู้ร่วมกับเพื่อน การดูงาน และกรณีศึกษา
               (Learn from Peers, Field Trips and Case studies)
             </li>
-            <li>
-              ทำความเข้าใจปัญหาอย่างลึกซึ้ง (Get Insights and Analyse Root
-              Causes)
-            </li>
-            <li>
-              มองเห็นวิธีแก้ไขปัญหาที่หลากหลาย (Explore the Diversities of
-              Solutions)
-            </li>
-            <li>สร้างทฤษฎีการเปลี่ยนแปลง (Create Theory of Change)</li>
+            <li>ทบทวนทฤษฎีการเปลี่ยนแปลง (Create Theory of Change)</li>
+            <li>พัฒนาโมเดลธุรกิจ (Develop a Business Model Canvas)</li>
             <li>สร้างวิธีการวัดผลโครงการ (Measure Success)</li>
             <li>
               รู้จักตัวเอง และเรียนรู้การทำงานร่วมกันในทีม (Collaboration and
               Leadership Style)
+            </li>
+            <li>
+              ค้นหารูปแบบองค์กรที่ใช่สำหรับทีมคุณ (Define your Legal Entity:
+              NGO, SE, etc.)
             </li>
             <li>จัดการเอกสารและการเงิน (Report and Financial Management)</li>
             <li>
@@ -115,7 +112,7 @@ const TurnPro = () => (
               Outcome)
             </li>
             <li>
-              มองเห็นโอกาสในอนาคตสำหรับเส้นทางการโครงการเพื่อสังคม (Path for
+              มองเห็นโอกาสในอนาคตสำหรับเส้นทางการทำโครงการเพื่อสังคม (Path for
               Social Innovators)
             </li>
           </ul>
@@ -125,8 +122,7 @@ const TurnPro = () => (
           <ul>
             <li>วิธีจัดการความขัดแย้ง (Conflict Management)</li>
             <li>
-              สร้างการมีส่วนร่วมกับผู้มีส่วนได้ส่วนเสีย (Stakeholders
-              Engagement)
+              สร้างการมีส่วนร่วมกับผู้มีส่วนได้ส่วนเสีย (Stakeholders Engagement)
             </li>
             <li>
               การสร้างพื้นที่ในการแลกเปลี่ยนและสะท้อนคิด (Facilitator Skills)
