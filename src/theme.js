@@ -63,10 +63,9 @@ export default responsiveFontSizes(
           '&:focus': {
             boxShadow: 'none',
           },
-
         },
         containedPrimary: {
-          color: '#fff',
+          color: blueGrey[900],
         },
       },
     },

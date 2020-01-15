@@ -49,7 +49,7 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
   iconLabel: {
     fontSize: 10,
     marginTop: 4,
-    color: palette.grey[500],
+    color: palette.grey[600],
   },
   download: {
     color: palette.primary.main,
@@ -157,7 +157,7 @@ const Rookie = ({
                 </Element>
               ))}
             </Grid>
-            <Hidden only={'xs'}>
+            <Hidden implementation="css" only={'xs'}>
               <Grid item xs={12} sm={3} md={3}>
                 <Box position={'sticky'} top={96} mt={{ sm: 8, md: 12 }}>
                   <Box borderLeft={'1px solid'} borderColor={'grey.100'}>
@@ -196,7 +196,7 @@ const Rookie = ({
                 </Box>
               </Grid>
             </Hidden>
-            <Hidden smUp>
+            <Hidden implementation="css" smUp>
               <Box
                 position={'fixed'}
                 zIndex={1000}

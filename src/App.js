@@ -152,9 +152,6 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
   sidebarLevel2: {
     paddingLeft: 32,
   },
-  hiddenText: {
-    fontSize: 0,
-  },
 }));
 
 const StylesProvider = ({ children }) => {
@@ -172,9 +169,10 @@ const App = ({ location, children }) => {
           <Box css={{ overflow: opened ? 'hidden' : 'initial' }}>
             <AppBar color={'default'} className={styles.header}>
               <Toolbar>
-                <Hidden smUp>
+                <Hidden implementation="css" smUp>
                   <IconButton
-                    name={'sidebar toggle'}
+                    aria-label="sidebar toggle"
+                    edge={'start'}
                     onClick={() => setOpened(true)}
                   >
                     {opened ? <ArrowLeft /> : <MenuRounded />}
@@ -189,7 +187,7 @@ const App = ({ location, children }) => {
                   <img src={logo} alt={'logo'} />
                 </Box>
                 <Box ml={'auto'}>
-                  <Hidden only={'xs'}>
+                  <Hidden implementation="css" only={'xs'}>
                     <Button
                       endIcon={<KeyboardArrowDownRounded />}
                       className={styles.navLink}
@@ -250,7 +248,7 @@ const App = ({ location, children }) => {
               </Toolbar>
             </AppBar>
             <Fab
-              name={'close sidebar'}
+              aria-label="close sidebar"
               className={cx(styles.fab, !opened && styles.fabHidden)}
               onClick={() => setOpened(false)}
             >
@@ -318,15 +316,13 @@ const App = ({ location, children }) => {
                       {socials.map(social => (
                         <IconButton
                           key={social.label}
+                          aria-label={social.label}
                           className={styles.social}
                           component={'a'}
                           href={social.href}
                           rel={'noopener'}
                           target={'_blank'}
                         >
-                          <span className={styles.hiddenText}>
-                            {social.label}
-                          </span>
                           <FontAwesomeIcon icon={social.icon} />
                         </IconButton>
                       ))}
