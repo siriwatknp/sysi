@@ -157,8 +157,8 @@ const Rookie = ({
                 </Element>
               ))}
             </Grid>
-            <Hidden implementation="css" only={'xs'}>
-              <Grid item xs={12} sm={3} md={3}>
+            <Grid item xs={12} sm={3} md={3}>
+              <Hidden implementation="css" only={'xs'}>
                 <Box position={'sticky'} top={96} mt={{ sm: 8, md: 12 }}>
                   <Box borderLeft={'1px solid'} borderColor={'grey.100'}>
                     {toc.map(item => (
@@ -194,8 +194,8 @@ const Rookie = ({
                     </Box>
                   )}
                 </Box>
-              </Grid>
-            </Hidden>
+              </Hidden>
+            </Grid>
             <Hidden implementation="css" smUp>
               <Box
                 position={'fixed'}
