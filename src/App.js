@@ -186,7 +186,7 @@ const App = ({ location, children }) => {
                 >
                   <img src={logo} alt={'logo'} />
                 </Box>
-                <Box ml={'auto'}>
+                <Box ml={'auto'} display={'flex'}>
                   <Hidden implementation="css" only={'xs'}>
                     <Button
                       endIcon={<KeyboardArrowDownRounded />}
