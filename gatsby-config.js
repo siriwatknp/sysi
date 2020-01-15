@@ -6,18 +6,13 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Kanit`,
-            variants: ['400', '700', '900'],
-          },
-          {
-            family: `Sarabun`,
-            variants: ['400', '700'],
-          },
+          `Kanit\:400,700,900`,
+          `Sarabun\:400,700`, // you can also specify font weights and styles
         ],
+        display: 'swap',
       },
     },
     `gatsby-plugin-react-helmet`,

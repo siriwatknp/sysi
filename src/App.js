@@ -152,11 +152,6 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
   sidebarLevel2: {
     paddingLeft: 32,
   },
-  hiddenText: {
-    fontSize: 0,
-    width: 0,
-    opacity: 0,
-  },
 }));
 
 const StylesProvider = ({ children }) => {
@@ -174,15 +169,12 @@ const App = ({ location, children }) => {
           <Box css={{ overflow: opened ? 'hidden' : 'initial' }}>
             <AppBar color={'default'} className={styles.header}>
               <Toolbar>
-                <Hidden smUp>
+                <Hidden implementation="css" smUp>
                   <IconButton
                     aria-label="sidebar toggle"
                     edge={'start'}
                     onClick={() => setOpened(true)}
                   >
-                    <span className={styles.hiddenText} aria-hidden={true}>
-                      sidebar toggle
-                    </span>
                     {opened ? <ArrowLeft /> : <MenuRounded />}
                   </IconButton>
                 </Hidden>
@@ -195,7 +187,7 @@ const App = ({ location, children }) => {
                   <img src={logo} alt={'logo'} />
                 </Box>
                 <Box ml={'auto'}>
-                  <Hidden only={'xs'}>
+                  <Hidden implementation="css" only={'xs'}>
                     <Button
                       endIcon={<KeyboardArrowDownRounded />}
                       className={styles.navLink}
@@ -331,12 +323,6 @@ const App = ({ location, children }) => {
                           rel={'noopener'}
                           target={'_blank'}
                         >
-                          <span
-                            className={styles.hiddenText}
-                            aria-hidden={true}
-                          >
-                            {social.label}
-                          </span>
                           <FontAwesomeIcon icon={social.icon} />
                         </IconButton>
                       ))}
