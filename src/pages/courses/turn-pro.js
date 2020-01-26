@@ -1,9 +1,10 @@
 import React from 'react';
+import Layout from '../../components/Layout';
 import Course from '../../templates/Course';
 import SEO from '../../components/seo';
 
 const TurnPro = () => (
-  <>
+  <Layout>
     <SEO
       title={'ระดับใกล้โปร • Turn-Pro'}
       description={
@@ -148,7 +149,7 @@ const TurnPro = () => (
         </>
       }
     />
-  </>
+  </Layout>
 );
 
 export default TurnPro;

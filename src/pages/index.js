@@ -10,6 +10,7 @@ import SupportInfo from '../components/SupportInfo';
 import LevelInfo from '../components/LevelInfo';
 import Banner from '../components/Banner';
 import SEO from '../components/seo';
+import Layout from '../components/Layout';
 import FixedImage from '../components/FixedImage';
 import FluidImage from '../components/FluidImage';
 import thoughtworks_logo from '../images/thoughtworks_logo.jpg';
@@ -85,7 +86,7 @@ const useStyles = makeStyles(({ breakpoints }) => ({
 const IndexPage = () => {
   const styles = useStyles();
   return (
-    <>
+    <Layout>
       <SEO title={'หน้าหลัก • Home'} />
       <Box
         color={'common.white'}
@@ -226,7 +227,7 @@ const IndexPage = () => {
           </Box>
         </Box>
       </Container>
-    </>
+    </Layout>
   );
 };
 
