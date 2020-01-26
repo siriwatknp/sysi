@@ -10,6 +10,7 @@ import IconButton from '@material-ui/core/IconButton';
 import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp';
 
+import Layout from '../components/Layout';
 import SEO from '../components/seo';
 
 const useStyles = makeStyles(({ palette }) => ({
@@ -43,7 +44,7 @@ const FAQ = () => {
   const styles = useStyles();
   const [openKey, setOpenKey] = React.useState('');
   return (
-    <>
+    <Layout>
       <SEO title={'คำถามที่พบบ่อย • FAQs'} />
       <Box bgcolor={'grey.50'}>
         <Container maxWidth={'md'}>
@@ -85,7 +86,7 @@ const FAQ = () => {
           </Box>
         </Container>
       </Box>
-    </>
+    </Layout>
   );
 };
 

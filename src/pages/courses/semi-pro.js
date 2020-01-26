@@ -1,9 +1,10 @@
 import React from 'react';
+import Layout from '../../components/Layout';
 import Course from '../../templates/Course';
 import SEO from '../../components/seo';
 
 const SemiPro = () => (
-  <>
+  <Layout>
     <SEO
       title={'ระดับกลาง • Semi-Pro'}
       description={
@@ -140,7 +141,7 @@ const SemiPro = () => (
         </>
       }
     />
-  </>
+  </Layout>
 );
 
 export default SemiPro;

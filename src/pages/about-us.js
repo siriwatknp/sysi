@@ -12,6 +12,7 @@ import thoughtworks_logo from '../images/thoughtworks_logo.jpg';
 import aboutus from '../images/aboutus.jpg';
 
 import SEO from '../components/seo';
+import Layout from '../components/Layout';
 
 const useStyles = makeStyles(() => ({
   logo: {
@@ -23,7 +24,7 @@ const useStyles = makeStyles(() => ({
 const AboutUs = () => {
   const styles = useStyles();
   return (
-    <>
+    <Layout>
       <SEO
         title={'เกี่ยวกับเรา • About Us'}
         description={
@@ -196,7 +197,7 @@ const AboutUs = () => {
           </p>
         </Container>
       </Box>
-    </>
+    </Layout>
   );
 };
 

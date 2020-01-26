@@ -1,9 +1,10 @@
 import React from 'react';
+import Layout from '../../components/Layout';
 import Course from '../../templates/Course';
 import SEO from '../../components/seo';
 
 const Rookie = () => (
-  <>
+  <Layout>
     <SEO
       title={'ระดับเริ่มต้น • Rookie'}
       description={
@@ -145,7 +146,7 @@ const Rookie = () => (
         </>
       }
     />
-  </>
+  </Layout>
 );
 
 export default Rookie;
