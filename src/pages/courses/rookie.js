@@ -40,7 +40,7 @@ const Rookie = () => (
       }
       timeline={[
         {
-          startDate: { day: 10, month: 'ม.ค. 63' },
+          startDate: { day: 15, month: 'ม.ค. 63' },
           endDate: { day: 28, month: 'ก.พ. 63' },
           title: 'รับสมัคร',
           description: <>สำหรับส่งทางไปรษณีย์ หมดเขตวันที่ 24 ก.พ. 63</>,
@@ -52,31 +52,31 @@ const Rookie = () => (
         {
           startDate: { day: 7, month: 'มี.ค. 63' },
           endDate: { day: 8 },
-          title: 'สัมภาษณ์ประจำภาค',
-        },
-        {
-          startDate: { day: 7, month: 'มี.ค. 63' },
-          endDate: { day: 8 },
-          title: 'ประกาศผลรอบสัมภาษณ์',
+          title: 'สัมภาษณ์ตามภูมิภาค',
         },
         {
           startDate: { day: 11, month: 'มี.ค. 63' },
-          title: 'ปฐมนิเทศ',
+          title: 'ประกาศผลรอบสัมภาษณ์',
+        },
+        {
+          startDate: { day: 4, month: 'เม.ษ. 63' },
+          endDate: { day: 7 },
+          title: 'ปฐมนิเทศ (4 วัน 3 คืน)',
         },
         {
           startDate: { day: 5, month: 'มิ.ย. 63' },
           endDate: { day: 7 },
-          title: 'Workshop ติดอาวุธ',
+          title: 'Workshop ติดอาวุธ (3 วัน 2 คืน)',
         },
         {
           startDate: { day: 4, month: 'ก.ค. 63' },
           endDate: { day: 5 },
-          title: 'ลงพื้นที่เรียนรู้ (Field Trip)',
+          title: 'ลงพื้นที่เรียนรู้ (Field Trip 2 วัน 1 คืน)',
         },
         {
           startDate: { day: 7, month: 'ส.ค. 63' },
           endDate: { day: 9 },
-          title: 'ถอดบทเรียน',
+          title: 'ถอดบทเรียน (3 วัน 2 คืน)',
         },
       ]}
       material={
