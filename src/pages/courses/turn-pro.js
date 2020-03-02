@@ -1,4 +1,5 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Layout from '../../components/Layout';
 import Course from '../../templates/Course';
 import SEO from '../../components/seo';
@@ -14,6 +15,15 @@ const TurnPro = () => (
     <Course
       title={'ระดับใกล้โปร • Turn-Pro'}
       bannerName={'Header_TurnPro'}
+      downloads={[
+        {
+          href:
+            'https://drive.google.com/file/d/1-BvfvmxaeoRKt4_WMYRAz9ObeTl6O14B/view?usp=sharing',
+          id: 'download-app-form-turn-pro',
+          startIcon: <FontAwesomeIcon icon={['far', 'file-word']} />,
+          children: 'โหลด .docx',
+        },
+      ]}
       description={
         <>
           สำหรับกลุ่มที่ต้องการจริงจังกับการแก้ปัญหาในประเด็นที่ทำ
@@ -123,7 +133,8 @@ const TurnPro = () => (
           <ul>
             <li>วิธีจัดการความขัดแย้ง (Conflict Management)</li>
             <li>
-              สร้างการมีส่วนร่วมกับผู้มีส่วนได้ส่วนเสีย (Stakeholders Engagement)
+              สร้างการมีส่วนร่วมกับผู้มีส่วนได้ส่วนเสีย (Stakeholders
+              Engagement)
             </li>
             <li>
               การสร้างพื้นที่ในการแลกเปลี่ยนและสะท้อนคิด (Facilitator Skills)
