@@ -6,7 +6,11 @@ import {
   faMedium,
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import {
+  faEnvelope,
+  faFileWord,
+  faFilePdf,
+} from '@fortawesome/free-regular-svg-icons';
 import {
   faHandsUsd,
   faBookSpells,
@@ -19,6 +23,8 @@ import {
 } from '@fortawesome/pro-duotone-svg-icons';
 
 library.add(
+  faFileWord,
+  faFilePdf,
   faHandsUsd,
   faBookSpells,
   faMonitorHeartRate,

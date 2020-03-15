@@ -10,6 +10,8 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Hidden from '@material-ui/core/Hidden';
 import ListItem from '@material-ui/core/ListItem';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 import CloudDownload from '@material-ui/icons/CloudDownload';
 import { lightBlue } from '@material-ui/core/colors';
 import EventItem from '../components/EventItem';
@@ -32,6 +34,11 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
   activeListItem: {
     fontWeight: 'bold',
     fontSize: 17,
+  },
+  shortcuts: {
+    [breakpoints.only('xs')]: {
+      display: 'none',
+    },
   },
   elmLinkMobile: {
     fontSize: 24,
@@ -65,7 +72,7 @@ const useGridStyles = makeStyles(({ palette }) => ({
         content: '" "',
         display: 'block',
         position: 'absolute',
-        height: '32%',
+        height: '48%',
         width: 1,
         backgroundColor: palette.grey[100],
         top: '50%',
@@ -83,8 +90,12 @@ const Rookie = ({
   condition,
   timeline,
   material,
-  downloadProps,
+  downloads = [],
 }) => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const id = open ? 'download-popover' : undefined;
+  const handleClose = () => setAnchorEl(null);
   const styles = useStyles();
   const gridStyles = useGridStyles();
   const toc = [
@@ -158,47 +169,44 @@ const Rookie = ({
               ))}
             </Grid>
             <Grid item xs={12} sm={3} md={3}>
-              <Hidden
-                style={{ height: '100%' }}
-                implementation="css"
-                only={'xs'}
+              <Box
+                className={styles.shortcuts}
+                position={'sticky'}
+                top={96}
+                mt={{ sm: 8, md: 12 }}
               >
-                <Box position={'sticky'} top={96} mt={{ sm: 8, md: 12 }}>
-                  <Box borderLeft={'1px solid'} borderColor={'grey.100'}>
-                    {toc.map(item => (
-                      <Link
-                        key={item.label}
-                        activeClass={styles.activeListItem}
-                        to={item.to}
-                        smooth
-                        spy
-                        offset={-96}
-                        duration={800}
-                      >
-                        <ListItem className={styles.listItem} button>
-                          {item.label}
-                        </ListItem>
-                      </Link>
-                    ))}
-                  </Box>
-                  {downloadProps && (
-                    <Box mt={3} maxWidth={200}>
-                      <Button
-                        variant={'contained'}
-                        color={'primary'}
-                        fullWidth
-                        component={'a'}
-                        {...downloadProps}
-                        target={'_blank'}
-                        rel={'noopener'}
-                        startIcon={<CloudDownload />}
-                      >
-                        โหลดใบสมัคร
-                      </Button>
-                    </Box>
-                  )}
+                <Box borderLeft={'1px solid'} borderColor={'grey.100'}>
+                  {toc.map(item => (
+                    <Link
+                      key={item.label}
+                      activeClass={styles.activeListItem}
+                      to={item.to}
+                      smooth
+                      spy
+                      offset={-96}
+                      duration={800}
+                    >
+                      <ListItem className={styles.listItem} button>
+                        {item.label}
+                      </ListItem>
+                    </Link>
+                  ))}
                 </Box>
-              </Hidden>
+                {downloads.map((item, i) => (
+                  <Box key={i} mt={i === 0 ? 3 : 1} maxWidth={200}>
+                    <Button
+                      variant={'contained'}
+                      color={'primary'}
+                      fullWidth
+                      component={'a'}
+                      startIcon={<CloudDownload />}
+                      {...item}
+                      target={'_blank'}
+                      rel={'noopener'}
+                    />
+                  </Box>
+                ))}
+              </Box>
             </Grid>
             <Hidden implementation="css" smUp>
               <Box
@@ -212,7 +220,7 @@ const Rookie = ({
                 <Paper elevation={8}>
                   <Grid container>
                     {toc.map(item => (
-                      <Grid item xs classes={gridStyles}>
+                      <Grid key={item.to} item xs classes={gridStyles}>
                         <Link
                           className={styles.elmLinkMobile}
                           activeClass={styles.elmLinkMobileActive}
@@ -227,26 +235,68 @@ const Rookie = ({
                         </Link>
                       </Grid>
                     ))}
-                    {downloadProps && (
-                      <Grid
-                        item
-                        xs
-                        classes={gridStyles}
-                        container
-                        alignItems={'center'}
-                        justify={'center'}
-                      >
+                    <Grid
+                      item
+                      xs
+                      classes={gridStyles}
+                      container
+                      alignItems={'center'}
+                      justify={'center'}
+                    >
+                      {downloads && downloads.length > 1 ? (
+                        <>
+                          <Menu
+                            id={id}
+                            open={open}
+                            anchorEl={anchorEl}
+                            anchorOrigin={{
+                              vertical: 'top',
+                              horizontal: 'right',
+                            }}
+                            transformOrigin={{
+                              vertical: 'bottom',
+                              horizontal: 'right',
+                            }}
+                            onClose={handleClose}
+                          >
+                            {downloads.map(item => (
+                              <MenuItem
+                                key={item.id}
+                                component={'a'}
+                                {...item}
+                                target={'_blank'}
+                                rel={'noopener'}
+                              >
+                                {item.startIcon}
+                                <span style={{ marginLeft: 8 }}>
+                                  {item.children}
+                                </span>
+                              </MenuItem>
+                            ))}
+                          </Menu>
+                          <button
+                            className={cx(
+                              styles.elmLinkMobile,
+                              styles.download
+                            )}
+                            onClick={e => setAnchorEl(e.currentTarget)}
+                          >
+                            <CloudDownload />
+                            <span className={styles.iconLabel}>
+                              โหลดใบสมัคร
+                            </span>
+                          </button>
+                        </>
+                      ) : (
                         <a
-                          {...downloadProps}
-                          target={'_blank'}
-                          rel={'noopener'}
                           className={cx(styles.elmLinkMobile, styles.download)}
+                          {...downloads?.[0]}
                         >
                           <CloudDownload />
                           <span className={styles.iconLabel}>โหลดใบสมัคร</span>
                         </a>
-                      </Grid>
-                    )}
+                      )}
+                    </Grid>
                   </Grid>
                 </Paper>
               </Box>

@@ -39,7 +39,7 @@ const SemiPro = () => (
           description: <>สำหรับส่งทางไปรษณีย์ หมดเขตวันที่ 25 ก.ย. 63</>,
         },
         {
-          startDate: { day: 3, month: 'ต.ค. 63' },
+          startDate: { day: 10, month: 'ต.ค. 63' },
           title: 'ประกาศผลรอบใบสมัคร',
         },
         {

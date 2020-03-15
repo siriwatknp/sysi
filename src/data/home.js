@@ -42,7 +42,6 @@ export const supports = [
 export const levels = [
   styles => ({
     title: 'ระดับเริ่มต้น • Rookie',
-    extra: 'เปิดรับสมัครแล้ว ถึง 28 ก.พ. 63',
     content: (
       <>
         <h4 className={styles.content}>
@@ -58,17 +57,6 @@ export const levels = [
       </>
     ),
     actions: [
-      {
-        id: 'download-app-form-rookie',
-        label: 'โหลดใบสมัคร',
-        variant: 'contained',
-        color: 'primary',
-        component: 'a',
-        href:
-          'https://drive.google.com/file/d/1-BvfvmxaeoRKt4_WMYRAz9ObeTl6O14B/view?usp=sharing',
-        target: '_blank',
-        rel: 'noopener',
-      },
       {
         label: 'อ่านรายละเอียด',
         variant: 'contained',
@@ -104,6 +92,7 @@ export const levels = [
   }),
   styles => ({
     title: 'ระดับใกล้โปร • Turn-Pro',
+    extra: 'เปิดรับสมัครแล้ว ถึง 30 เม.ย. 63',
     content: (
       <>
         <h4 className={styles.content}>
@@ -119,6 +108,17 @@ export const levels = [
       </>
     ),
     actions: [
+      {
+        id: 'download-app-form-turn-pro',
+        label: 'โหลดใบสมัคร',
+        variant: 'contained',
+        color: 'primary',
+        component: 'a',
+        href:
+          'https://docs.google.com/forms/d/e/1FAIpQLSeuFGft1zZaiJRSHExaEwdROFtPG4Posaj9pDNL_WgCkaJNCQ/viewform',
+        target: '_blank',
+        rel: 'noopener',
+      },
       {
         label: 'อ่านรายละเอียด',
         variant: 'contained',

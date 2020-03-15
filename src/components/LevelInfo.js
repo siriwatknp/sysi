@@ -29,6 +29,7 @@ const useStyles = makeStyles(({ palette }) => ({
   btn: {
     width: '100%',
     borderRadius: 40,
+    whiteSpace: 'nowrap',
   },
 }));
 
@@ -42,7 +43,7 @@ const LevelInfo = ({ title, extra, content, actions }) => {
       {!extra && <Divider />}
       {extra && (
         <Box
-          bgcolor={'primary.main'}
+          bgcolor={'#ffbd80'}
           color={'common.white'}
           py={2}
           px={{ xs: 2, sm: 3 }}

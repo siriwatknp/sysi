@@ -55,7 +55,7 @@ export default responsiveFontSizes(
           paddingLeft: 20,
           paddingRight: 20,
           backgroundColor: blueGrey[50],
-          color: blueGrey[600],
+          color: blueGrey[700],
           boxShadow: 'none',
           '&:hover': {
             boxShadow: 'none',
@@ -65,7 +65,13 @@ export default responsiveFontSizes(
           },
         },
         containedPrimary: {
+          transition:
+            '250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+          backgroundColor: '#ffbd80',
           color: blueGrey[900],
+          '&:hover': {
+            backgroundColor: '#FF9A3E',
+          },
         },
       },
     },

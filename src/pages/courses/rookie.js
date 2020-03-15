@@ -14,11 +14,7 @@ const Rookie = () => (
     <Course
       title={'ระดับเริ่มต้น • Rookie'}
       bannerName={'Header_Rookie'}
-      downloadProps={{
-        href:
-          'https://drive.google.com/file/d/1-BvfvmxaeoRKt4_WMYRAz9ObeTl6O14B/view?usp=sharing',
-        id: 'download-app-form-rookie',
-      }}
+      downloads={[]}
       description={
         <>
           สำหรับผู้ที่มีไอเดียแก้ปัญหาสังคมที่ตนเองพบเจอ
@@ -59,7 +55,7 @@ const Rookie = () => (
           title: 'ประกาศผลรอบสัมภาษณ์',
         },
         {
-          startDate: { day: 4, month: 'เม.ษ. 63' },
+          startDate: { day: 4, month: 'เม.ย. 63' },
           endDate: { day: 7 },
           title: 'ปฐมนิเทศ (4 วัน 3 คืน)',
         },
