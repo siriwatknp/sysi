@@ -107,7 +107,7 @@ const Footer = () => {
           <Grid item xs={6} sm={5} md={2}>
             <h5 className={styles.categoryHeading}>โปรแกรม</h5>
             {levels.map(lvl => (
-              <Link className={styles.link} to={lvl.to}>
+              <Link key={lvl.to} className={styles.link} to={lvl.to}>
                 {lvl.label}
               </Link>
             ))}

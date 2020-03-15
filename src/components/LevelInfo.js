@@ -29,6 +29,7 @@ const useStyles = makeStyles(({ palette }) => ({
   btn: {
     width: '100%',
     borderRadius: 40,
+    whiteSpace: 'nowrap',
   },
 }));
 

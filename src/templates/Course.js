@@ -10,7 +10,6 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Hidden from '@material-ui/core/Hidden';
 import ListItem from '@material-ui/core/ListItem';
-import Popover from '@material-ui/core/Popover';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import CloudDownload from '@material-ui/icons/CloudDownload';
@@ -194,7 +193,7 @@ const Rookie = ({
                   ))}
                 </Box>
                 {downloads.map((item, i) => (
-                  <Box mt={i === 0 ? 3 : 1} maxWidth={200}>
+                  <Box key={i} mt={i === 0 ? 3 : 1} maxWidth={200}>
                     <Button
                       variant={'contained'}
                       color={'primary'}
@@ -221,7 +220,7 @@ const Rookie = ({
                 <Paper elevation={8}>
                   <Grid container>
                     {toc.map(item => (
-                      <Grid item xs classes={gridStyles}>
+                      <Grid key={item.to} item xs classes={gridStyles}>
                         <Link
                           className={styles.elmLinkMobile}
                           activeClass={styles.elmLinkMobileActive}
@@ -244,42 +243,59 @@ const Rookie = ({
                       alignItems={'center'}
                       justify={'center'}
                     >
-                      <Menu
-                        id={id}
-                        open={open}
-                        anchorEl={anchorEl}
-                        anchorOrigin={{
-                          vertical: 'top',
-                          horizontal: 'right',
-                        }}
-                        transformOrigin={{
-                          vertical: 'bottom',
-                          horizontal: 'right',
-                        }}
-                        onClose={handleClose}
-                      >
-                        {downloads.map(item => (
-                          <MenuItem
-                            component={'a'}
-                            {...item}
-                            target={'_blank'}
-                            rel={'noopener'}
+                      {downloads && downloads.length > 1 ? (
+                        <>
+                          <Menu
+                            id={id}
+                            open={open}
+                            anchorEl={anchorEl}
+                            anchorOrigin={{
+                              vertical: 'top',
+                              horizontal: 'right',
+                            }}
+                            transformOrigin={{
+                              vertical: 'bottom',
+                              horizontal: 'right',
+                            }}
+                            onClose={handleClose}
                           >
-                            {item.startIcon}
-                            <span style={{ marginLeft: 8 }}>
-                              {item.children}
+                            {downloads.map(item => (
+                              <MenuItem
+                                key={item.id}
+                                component={'a'}
+                                {...item}
+                                target={'_blank'}
+                                rel={'noopener'}
+                              >
+                                {item.startIcon}
+                                <span style={{ marginLeft: 8 }}>
+                                  {item.children}
+                                </span>
+                              </MenuItem>
+                            ))}
+                          </Menu>
+                          <button
+                            className={cx(
+                              styles.elmLinkMobile,
+                              styles.download
+                            )}
+                            onClick={e => setAnchorEl(e.currentTarget)}
+                          >
+                            <CloudDownload />
+                            <span className={styles.iconLabel}>
+                              โหลดใบสมัคร
                             </span>
-                          </MenuItem>
-                        ))}
-                      </Menu>
-                      <a
-                        role="button"
-                        className={cx(styles.elmLinkMobile, styles.download)}
-                        onClick={e => setAnchorEl(e.currentTarget)}
-                      >
-                        <CloudDownload />
-                        <span className={styles.iconLabel}>โหลดใบสมัคร</span>
-                      </a>
+                          </button>
+                        </>
+                      ) : (
+                        <a
+                          className={cx(styles.elmLinkMobile, styles.download)}
+                          {...downloads?.[0]}
+                        >
+                          <CloudDownload />
+                          <span className={styles.iconLabel}>โหลดใบสมัคร</span>
+                        </a>
+                      )}
                     </Grid>
                   </Grid>
                 </Paper>

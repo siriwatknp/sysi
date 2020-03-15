@@ -1,5 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Layout from '../../components/Layout';
 import Course from '../../templates/Course';
 import SEO from '../../components/seo';
@@ -18,10 +17,11 @@ const TurnPro = () => (
       downloads={[
         {
           href:
-            'https://drive.google.com/file/d/1-BvfvmxaeoRKt4_WMYRAz9ObeTl6O14B/view?usp=sharing',
+            'https://docs.google.com/forms/d/e/1FAIpQLSeuFGft1zZaiJRSHExaEwdROFtPG4Posaj9pDNL_WgCkaJNCQ/viewform',
           id: 'download-app-form-turn-pro',
-          startIcon: <FontAwesomeIcon icon={['far', 'file-word']} />,
-          children: 'โหลด .docx',
+          children: 'โหลดใบสมัคร',
+          target: '_blank',
+          rel: 'noopener',
         },
       ]}
       description={
@@ -33,33 +33,54 @@ const TurnPro = () => (
         </>
       }
       condition={
-        <ul>
-          <li>อายุระหว่าง 20 - 30 ปี</li>
-          <li>จำนวนสมาชิก 3 - 5 คน</li>
-          <li>ทุนสนับสนุนไม่เกิน 650,000 บาท</li>
-          <li>
-            ทำนวัตกรรม / โครงการระหว่าง เดือน ก.ค. 63 - เม.ย. 64 (10 เดือน)
-          </li>
-          <li>สามารถเข้าร่วมกิจกรรมของโครงการตามตารางได้ทุกครั้ง</li>
-        </ul>
+        <>
+          <ul>
+            <li>อายุระหว่าง 20 - 30 ปี</li>
+            <li>จำนวนสมาชิก 3 - 5 คน</li>
+            <li>ทุนสนับสนุนไม่เกิน 650,000 บาท</li>
+            <li>
+              ทำนวัตกรรม / โครงการระหว่าง เดือน ก.ค. 63 - เม.ย. 64 (10 เดือน)
+            </li>
+            <li>สามารถเข้าร่วมกิจกรรมของโครงการตามตารางได้ทุกครั้ง</li>
+          </ul>
+          <br />
+          <p>
+            <b>เอกสารสำหรับการสมัครประกอบด้วย</b>
+          </p>
+          <p>เอกสารที่สามารถ download แบบฟอร์มได้</p>
+          <ol>
+            <li>ใบสมัคร</li>
+            <li>โครงร่างโครงการ (Project Proposal) (ไม่เกิน 40 หน้า A4) </li>
+          </ol>
+          <p>เอกสารแนบ</p>
+          <ol>
+            <li>
+              ประวัติย่อ (CV) ของผู้สมัครทุกคนในทีมเป็นภาษาไทย ระบุ ทักษะที่มี
+              ประวัติการศึกษา ประวัติการทำงาน ผลงาน/ประสบการณ์
+            </li>
+            <li>แฟ้มสะสมผลงาน (Portfolio) ที่แสดงผลงานที่ผ่านมาของทีม รวมถึงผลลัพธ์ทางสังคมที่ผลงานนั้น ๆ สร้างขึ้น (ไม่จำกัดรูปแบบ)</li>
+            <li>วีดีโอนำเสนอโครงการ ไม่เกิน 5 นาที</li>
+          </ol>
+        </>
       }
       timeline={[
         {
-          startDate: { day: 2, month: 'มี.ค. 63' },
+          startDate: { day: 15, month: 'มี.ค. 63' },
           endDate: { day: 30, month: 'เม.ย. 63' },
           title: 'รับสมัคร',
           description: <>สำหรับส่งทางไปรษณีย์ หมดเขตวันที่ 27 เม.ย. 63</>,
         },
         {
-          startDate: { day: 8, month: 'พ.ค. 63' },
+          startDate: { day: 15, month: 'พ.ค. 63' },
           title: 'ประกาศผลรอบใบสมัคร',
         },
         {
-          startDate: { day: 16, month: 'พ.ค. 63' },
+          startDate: { day: 23, month: 'พ.ค. 63' },
+          endDate: { day: 24, month: 'พ.ค. 63' },
           title: 'สัมภาษณ์ที่กรุงเทพ',
         },
         {
-          startDate: { day: 20, month: 'พ.ค. 63' },
+          startDate: { day: 27, month: 'มิ.ย. 63' },
           title: 'ประกาศผลรอบสัมภาษณ์',
         },
         {
