@@ -55,7 +55,7 @@ export default responsiveFontSizes(
           paddingLeft: 20,
           paddingRight: 20,
           backgroundColor: blueGrey[50],
-          color: blueGrey[600],
+          color: blueGrey[700],
           boxShadow: 'none',
           '&:hover': {
             boxShadow: 'none',

@@ -55,7 +55,7 @@ const Rookie = () => (
           title: 'ประกาศผลรอบสัมภาษณ์',
         },
         {
-          startDate: { day: 4, month: 'เม.ษ. 63' },
+          startDate: { day: 4, month: 'เม.ย. 63' },
           endDate: { day: 7 },
           title: 'ปฐมนิเทศ (4 วัน 3 คืน)',
         },
