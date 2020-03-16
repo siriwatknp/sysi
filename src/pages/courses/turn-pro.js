@@ -84,8 +84,8 @@ const TurnPro = () => (
           title: 'ประกาศผลรอบสัมภาษณ์',
         },
         {
-          startDate: { day: 19, month: 'มิ.ย. 63' },
-          endDate: { day: 22 },
+          startDate: { day: 26, month: 'มิ.ย. 63' },
+          endDate: { day: 29 },
           title: 'ปฐมนิเทศ',
           description: '4 วัน 3 คืน',
         },
