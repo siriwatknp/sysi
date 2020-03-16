@@ -80,7 +80,7 @@ const TurnPro = () => (
           title: 'สัมภาษณ์ที่กรุงเทพ',
         },
         {
-          startDate: { day: 27, month: 'มิ.ย. 63' },
+          startDate: { day: 27, month: 'พ.ค. 63' },
           title: 'ประกาศผลรอบสัมภาษณ์',
         },
         {
