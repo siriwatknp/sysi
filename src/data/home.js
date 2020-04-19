@@ -92,7 +92,7 @@ export const levels = [
   }),
   styles => ({
     title: 'ระดับใกล้โปร • Turn-Pro',
-    extra: 'เปิดรับสมัครแล้ว ถึง 30 เม.ย. 63',
+    extra: 'เปิดรับสมัครแล้ว ถึง 30 พ.ค. 63',
     content: (
       <>
         <h4 className={styles.content}>
