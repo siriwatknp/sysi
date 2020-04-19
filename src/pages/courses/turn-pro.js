@@ -66,26 +66,26 @@ const TurnPro = () => (
       timeline={[
         {
           startDate: { day: 15, month: 'มี.ค. 63' },
-          endDate: { day: 30, month: 'เม.ย. 63' },
+          endDate: { day: 30, month: 'พ.ค. 63' },
           title: 'รับสมัคร',
           description: <>สำหรับส่งทางไปรษณีย์ หมดเขตวันที่ 27 เม.ย. 63</>,
         },
         {
-          startDate: { day: 15, month: 'พ.ค. 63' },
+          startDate: { day: 15, month: 'มิ.ย. 63' },
           title: 'ประกาศผลรอบใบสมัคร',
         },
         {
-          startDate: { day: 23, month: 'พ.ค. 63' },
-          endDate: { day: 24, month: 'พ.ค. 63' },
-          title: 'สัมภาษณ์ที่กรุงเทพ',
+          startDate: { day: 27, month: 'มิ.ย. 63' },
+          endDate: { day: 28, month: 'มิ.ย. 63' },
+          title: 'สัมภาษณ์ที่ สสส. กรุงเทพ',
         },
         {
-          startDate: { day: 27, month: 'พ.ค. 63' },
+          startDate: { day: 30, month: 'มิ.ย. 63' },
           title: 'ประกาศผลรอบสัมภาษณ์',
         },
         {
-          startDate: { day: 26, month: 'มิ.ย. 63' },
-          endDate: { day: 29 },
+          startDate: { day: 24, month: 'ก.ค. 63' },
+          endDate: { day: 27 },
           title: 'ปฐมนิเทศ',
           description: '4 วัน 3 คืน',
         },
