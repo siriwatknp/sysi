@@ -14,6 +14,16 @@ const SemiPro = () => (
     <Course
       title={'ระดับกลาง • Semi-Pro'}
       bannerName={'Header_SemiPro'}
+      downloads={[
+        {
+          href:
+            'https://docs.google.com/forms/d/e/1FAIpQLSdV33l4c8_FjST-lA0q0rOIIue93_nxOHt7ks1C7RtbKFEY2w/viewform',
+          id: 'download-app-form-turn-pro',
+          children: 'โหลดใบสมัคร',
+          target: '_blank',
+          rel: 'noopener',
+        },
+      ]}
       description={
         <>
           เหมาะสำหรับกลุ่มที่ต้องการขยับขยายให้สิ่งที่ทำสร้างผลกระทบทางสังคมมากขึ้น
@@ -34,25 +44,26 @@ const SemiPro = () => (
       timeline={[
         {
           startDate: { day: 1, month: 'ส.ค. 63' },
-          endDate: { day: 30, month: 'ก.ย. 63' },
+          endDate: { day: 9, month: 'ต.ค. 63' },
           title: 'รับสมัคร',
           description: <>สำหรับส่งทางไปรษณีย์ หมดเขตวันที่ 25 ก.ย. 63</>,
         },
         {
-          startDate: { day: 10, month: 'ต.ค. 63' },
+          startDate: { day: 19, month: 'ต.ค. 63' },
           title: 'ประกาศผลรอบใบสมัคร',
         },
         {
-          startDate: { day: 17, month: 'ต.ค. 63' },
+          startDate: { day: 24, month: 'ต.ค. 63' },
+          endDate: { day: 25 },
           title: 'สัมภาษณ์ตามภาค',
         },
         {
-          startDate: { day: 21, month: 'ต.ค. 63' },
+          startDate: { day: 30, month: 'ต.ค. 63' },
           title: 'ประกาศผลรอบสัมภาษณ์',
         },
         {
-          startDate: { day: 6, month: 'พ.ย. 63' },
-          endDate: { day: 9 },
+          startDate: { day: 20, month: 'พ.ย. 63' },
+          endDate: { day: 23 },
           title: 'ปฐมนิเทศ',
           description: '4 วัน 3 คืน',
         },

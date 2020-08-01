@@ -14,16 +14,6 @@ const TurnPro = () => (
     <Course
       title={'ระดับใกล้โปร • Turn-Pro'}
       bannerName={'Header_TurnPro'}
-      downloads={[
-        {
-          href:
-            'https://docs.google.com/forms/d/e/1FAIpQLSeuFGft1zZaiJRSHExaEwdROFtPG4Posaj9pDNL_WgCkaJNCQ/viewform',
-          id: 'download-app-form-turn-pro',
-          children: 'โหลดใบสมัคร',
-          target: '_blank',
-          rel: 'noopener',
-        },
-      ]}
       description={
         <>
           สำหรับกลุ่มที่ต้องการจริงจังกับการแก้ปัญหาในประเด็นที่ทำ
