@@ -51,7 +51,9 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "cm": "npx git-cz"
+    "cm": "npx git-cz",
+    "deploy:staging": "firebase deploy --only hosting:staging",
+    "deploy:production": "firebase deploy --only hosting:production"
   },
   "repository": {
     "type": "git",
