@@ -46,7 +46,6 @@ const SemiPro = () => (
           startDate: { day: 1, month: 'ส.ค. 63' },
           endDate: { day: 9, month: 'ต.ค. 63' },
           title: 'รับสมัคร',
-          description: <>สำหรับส่งทางไปรษณีย์ หมดเขตวันที่ 25 ก.ย. 63</>,
         },
         {
           startDate: { day: 19, month: 'ต.ค. 63' },
