@@ -4,6 +4,7 @@ export const levels = [
   { label: 'ระดับใกล้โปร • Turn-Pro', to: '/courses/turn-pro' },
 ];
 export const menus = [
+  { label: 'YouthWel', to: '/youthwel' },
   { label: 'เกี่ยวกับเรา', to: '/about-us' },
   { label: 'ถาม-ตอบ', to: '/FAQ' },
 ];
@@ -27,5 +28,5 @@ export const socials = [
     label: 'Our medium blog',
     icon: ['fab', 'medium'],
     href: 'https://medium.com/sysi',
-  }
+  },
 ];
