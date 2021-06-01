@@ -9,15 +9,19 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
+      - uses: actions/checkout@v2
+
+      # FontAwesome Setup
       - run: echo "@fortawesome:registry=https://npm.fontawesome.com/" > ~/.npmrc
       - run: echo "//npm.fontawesome.com/:_authToken=${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}" >> ~/.npmrc
       - run: cat ~/.npmrc
       - name: Inject FontAwesome Pro
         run: npx hygen preinstall fontawesome
+
+      - uses: c-hive/gha-yarn-cache@v1
       - name: Install Dependencies
         run: yarn
+
       - name: Build
         run: yarn build
       - name: Archive Production Artifact
@@ -30,10 +34,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - name: Download Artifact
-        uses: actions/download-artifact@master
+        uses: actions/download-artifact@v2
         with:
           name: public
           path: public
