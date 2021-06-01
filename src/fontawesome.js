@@ -11,28 +11,10 @@ import {
   faFileWord,
   faFilePdf,
 } from '@fortawesome/free-regular-svg-icons';
-import {
-  faHandsUsd,
-  faBookSpells,
-  faMonitorHeartRate,
-  faChartNetwork,
-  faClipboardListCheck,
-  faCalendarAlt,
-  faBooks,
-  faInfoCircle,
-} from '@fortawesome/pro-duotone-svg-icons';
 
 library.add(
   faFileWord,
   faFilePdf,
-  faHandsUsd,
-  faBookSpells,
-  faMonitorHeartRate,
-  faChartNetwork,
-  faClipboardListCheck,
-  faCalendarAlt,
-  faBooks,
-  faInfoCircle,
   faEnvelope,
   faFacebook,
   faTwitter,
