@@ -67,7 +67,7 @@ export const levels = [
   }),
   styles => ({
     title: 'ระดับกลาง • Semi-Pro',
-    extra: 'เปิดรับสมัครแล้ว ถึง 9 ต.ค. 63',
+    // extra: 'เปิดรับสมัครแล้ว ถึง 9 ต.ค. 63',
     content: (
       <>
         <h4 className={styles.content}>
@@ -83,17 +83,17 @@ export const levels = [
       </>
     ),
     actions: [
-      {
-        id: 'download-app-form-turn-pro',
-        label: 'โหลดใบสมัคร',
-        variant: 'contained',
-        color: 'primary',
-        component: 'a',
-        href:
-          'https://docs.google.com/forms/d/e/1FAIpQLSdV33l4c8_FjST-lA0q0rOIIue93_nxOHt7ks1C7RtbKFEY2w/viewform',
-        target: '_blank',
-        rel: 'noopener',
-      },
+      // {
+      //   id: 'download-app-form-turn-pro',
+      //   label: 'โหลดใบสมัคร',
+      //   variant: 'contained',
+      //   color: 'primary',
+      //   component: 'a',
+      //   href:
+      //     'https://docs.google.com/forms/d/e/1FAIpQLSdV33l4c8_FjST-lA0q0rOIIue93_nxOHt7ks1C7RtbKFEY2w/viewform',
+      //   target: '_blank',
+      //   rel: 'noopener',
+      // },
       {
         label: 'อ่านรายละเอียด',
         variant: 'contained',
