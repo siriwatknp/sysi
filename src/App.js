@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'clsx';
-import { Link as ScrollLink } from 'react-scroll';
+// import { Link as ScrollLink } from 'react-scroll';
 import { Link } from 'gatsby';
 import { makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -181,7 +181,7 @@ const App = ({ location, children }) => {
                       </Button>
                     ))}
                   </Hidden>
-                  {location.pathname === '/' && (
+                  {/* {location.pathname === '/' && (
                     <Button
                       component={ScrollLink}
                       to={'courses'}
@@ -194,7 +194,7 @@ const App = ({ location, children }) => {
                     >
                       สมัคร
                     </Button>
-                  )}
+                  )} */}
                 </Box>
               </Toolbar>
             </AppBar>

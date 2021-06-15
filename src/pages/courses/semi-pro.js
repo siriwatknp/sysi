@@ -14,16 +14,16 @@ const SemiPro = () => (
     <Course
       title={'ระดับกลาง • Semi-Pro'}
       bannerName={'Header_SemiPro'}
-      downloads={[
-        {
-          href:
-            'https://docs.google.com/forms/d/e/1FAIpQLSdV33l4c8_FjST-lA0q0rOIIue93_nxOHt7ks1C7RtbKFEY2w/viewform',
-          id: 'download-app-form-turn-pro',
-          children: 'โหลดใบสมัคร',
-          target: '_blank',
-          rel: 'noopener',
-        },
-      ]}
+      // downloads={[
+      //   {
+      //     href:
+      //       'https://docs.google.com/forms/d/e/1FAIpQLSdV33l4c8_FjST-lA0q0rOIIue93_nxOHt7ks1C7RtbKFEY2w/viewform',
+      //     id: 'download-app-form-turn-pro',
+      //     children: 'โหลดใบสมัคร',
+      //     target: '_blank',
+      //     rel: 'noopener',
+      //   },
+      // ]}
       description={
         <>
           เหมาะสำหรับกลุ่มที่ต้องการขยับขยายให้สิ่งที่ทำสร้างผลกระทบทางสังคมมากขึ้น
