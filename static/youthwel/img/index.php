@@ -146,7 +146,7 @@ section {
     ?>
 
 
-                <img  src="img/main_banner3.jpg" class="imgband" alt="Responsive image"><br>
+                <img  src="img/main_banner.jpg" class="imgband" alt="Responsive image"><br>
                 <img  src="img/main_banner31.jpg" class="imgband" alt="Responsive image">
 
  
