@@ -4,7 +4,7 @@ export const levels = [
   { label: 'ระดับใกล้โปร • Turn-Pro', to: '/courses/turn-pro' },
 ];
 export const menus = [
-  { label: 'YouthWel', to: '/youthwel' },
+  { label: 'YouthWel', to: 'https://youthwel.sysi.or.th/' },
   { label: 'เกี่ยวกับเรา', to: '/about-us' },
   { label: 'ถาม-ตอบ', to: '/FAQ' },
 ];
